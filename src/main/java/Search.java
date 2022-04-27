@@ -1,5 +1,5 @@
-import java.io.*;
 import java.util.*;
+import java.io.*;
 
 public class Search {
     static String searchInput; //Change from static later
@@ -193,7 +193,8 @@ public class Search {
                 String[] split = line.split(","); // separates columns using a comma
                 populateMapDays(split[5], split[0]); // adds the columns for coursecode and days
             }
-            filterCallers.promptUserDays(); //calls the prompt user method after
+            ArrayList<Course> toPrint = filterCallers.promptUserDays(); //calls the prompt user method after
+            toPrint.forEach(System.out::println);
             // error catching
         } catch (FileNotFoundException e) {
             e.printStackTrace();
@@ -231,10 +232,10 @@ public class Search {
                 courses.forEach(System.out::println); // prints out the list of appropriate courses
             }
             break;
-            }
         }
+    }
 
-        //scnr.close();
+    //scnr.close();
 
     // time filter code
 
@@ -263,7 +264,8 @@ public class Search {
                 String[] split = line.split(","); // separates columns using a comma
                 populateMapTimes(split[3], split[0]); // adds the columns for coursecode and start time
             }
-            filterCallers.promptUserTimes(); // then calls the prompt user method
+            ArrayList<Course> toPrint = filterCallers.promptUserTimes(); // then calls the prompt user method
+            toPrint.forEach(System.out::println);
             // error catching
         } catch (FileNotFoundException e) {
             e.printStackTrace();
@@ -301,7 +303,7 @@ public class Search {
             }
             break;
         }
-       // scnr.close();
+        // scnr.close();
     }
 
     // dept filter code
@@ -331,7 +333,8 @@ public class Search {
                 String[] split = line.split(","); // separates columns using a comma
                 populateMapDepts(split[10], split[0]); // adds the columns for coursecode and department
             }
-            filterCallers.promptUserDepts(); //calls the method to prompt the user
+            ArrayList<Course> toPrint = filterCallers.promptUserDepts(); //calls the method to prompt the user
+            toPrint.forEach(System.out::println);
             // error catching
         } catch (FileNotFoundException e) {
             e.printStackTrace();
@@ -370,7 +373,7 @@ public class Search {
             }
             break;
         }
-       //scnr.close();
+        //scnr.close();
 
     }
 
@@ -398,7 +401,8 @@ public class Search {
                 String[] split = line.split(","); // separates columns using a comma
                 populateMapBuildings(split[6], split[0]); // adds the columns for coursecode and building
             }
-            filterCallers.promptUserBuildings(); //calls the prompt user method after
+            ArrayList<Course> toPrint = filterCallers.promptUserBuildings(); //calls the prompt user method after
+            toPrint.forEach(System.out::println);
             // error catching
         } catch (FileNotFoundException e) {
             e.printStackTrace();

@@ -1,7 +1,11 @@
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.text.NumberFormat;
+
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Locale;
 import java.util.Scanner;
 import java.util.StringTokenizer;
 
@@ -16,12 +20,13 @@ public class Main {
     }
 
     static void tempPrint(ArrayList<Course> schedule){
-    System.out.println("- Current Schedule:");
+        System.out.println("- Current Schedule:");
         for (int i = 0; i < schedule.size(); i++){
             System.out.println(schedule.get(i).courseCode + " " + schedule.get(i).shortTitle + " " + schedule.get(i).meets + " " + schedule.get(i).startTime + "-" +schedule.get(i).endTime);
         }
 
     }
+
 
     static void printInitScreen(){
         System.out.println("\n____________________________________________________________________________");
@@ -38,7 +43,7 @@ public class Main {
     }
 
 
-    public static void main (String[] args) throws FileNotFoundException, IOException {
+    public static void main (String[] args) throws Exception {
         CourseList cl = new CourseList();
         User user = null;
         Logging lg;
@@ -169,7 +174,7 @@ public class Main {
                 lg.Action(user.username + " entered \"view\".");
                 tempPrint(user.schedule);
             }
-           else if(command.equals("add")){
+            else if(command.equals("add")){
                 //TODO
                 Scanner add = new Scanner(System.in);
                 String addOption = "";
@@ -245,32 +250,32 @@ public class Main {
             else if(command.equals("remove")){  //user input should take the form 'remove ACCT 202 B'
                 String code = "";
                 int codeSection = 1;
-                    while(st.hasMoreTokens()) {
-                        code += st.nextToken();     //Concat course code like ACCT 202 B
+                while(st.hasMoreTokens()) {
+                    code += st.nextToken();     //Concat course code like ACCT 202 B
 
-                        if (st.hasMoreTokens()) {
-                            if (codeSection != 2) {
-                                code += " ";
-                            }
-                            else {
-                                code += "  ";
-                            }
+                    if (st.hasMoreTokens()) {
+                        if (codeSection != 2) {
+                            code += " ";
                         }
-                        codeSection++;
+                        else {
+                            code += "  ";
+                        }
                     }
+                    codeSection++;
+                }
 
-                    if(user.scheduleContains(code)) {
-                        Course c = user.getCourse(code);
-                        cl.removeClass(c, user.schedule);
-                        lg.Action(user.username + " Successfully removed the course: " + c);
-                        System.out.println("Course removed.");
-                        tempPrint(user.schedule);
-                    }
+                if(user.scheduleContains(code)) {
+                    Course c = user.getCourse(code);
+                    cl.removeClass(c, user.schedule);
+                    lg.Action(user.username + " Successfully removed the course: " + c);
+                    System.out.println("Course removed.");
+                    tempPrint(user.schedule);
+                }
 
-                    else {
-                        System.out.println("Error: Course not found.");
-                        lg.logger.warning(user.username + " has tried to remove the invalid course: " + code );
-                    }
+                else {
+                    System.out.println("Error: Course not found.");
+                    lg.logger.warning(user.username + " has tried to remove the invalid course: " + code );
+                }
             }
 
             else if(command.equals("undo")){
@@ -410,7 +415,7 @@ public class Main {
                 boolean startT = true,endT = true;
                 Scanner ActScn = new Scanner(System.in);
                 String act = "";
-                String title, start ="", end="", meets="";
+                String title = "", start ="", end="", meets="";
                 while(!act.equals("done") || !act.equals("Done")){
                     System.out.println("Would you like to add an activity to your schedule? If yes enter 'yes'. If not enter 'done'");
                     act = ActScn.next();
@@ -438,11 +443,23 @@ public class Main {
                                 break;
                             }
                         }
-                        while (!meets.contains("M")&&!meets.contains("T")&&!meets.contains("W")&&!meets.contains("R")&&!meets.contains("F"))
+                        while (!meets.matches("[M,T,W,R,F]*")) {
                             System.out.println("Enter the day(s) that the Activity occurs on.(Ex MWF)");
-                        meets = ActScn.next();
-                        System.out.println("What is the Name of your Activity you are participating in?");
-                        title = ActScn.nextLine();
+                            meets = ActScn.next();
+                            if(meets.matches("[M,T,W,R,F]*")&&(!meets.contains("MM")&&!meets.contains("TT")&&!meets.contains("WW")&&!meets.contains("RR")&&!meets.contains("FF"))) {
+                                break;
+                            }else {
+                                lg.logger.warning(user.username + " has entered and invalid day(s) for the activity with the response: " + meets);
+                            }
+                        }
+                        while(title.equals("")) {
+                            System.out.println("What is the Name of your Activity you are participating in?");
+                            title = ActScn.nextLine();
+                            if(title.equals("")){
+                                System.out.println("Please enter the name of activity.");
+                                lg.logger.warning(user.username + " has not entered a name of the activity.");
+                            }
+                        }
                         Course c = new Course(title, start, end, meets);
                         Boolean cc = cl.checkConfliction(c,user.schedule);
                         Boolean d = cl.checkDouble(c, user.schedule);
@@ -523,10 +540,10 @@ public class Main {
                         Search.filterTxtDepts();
                         lg.Action(user.username + " applied a filter to all of the courses by the department of the courses.");
                         //break;
-                    } else if(filter.equals("building")){
-                    Search.filterTxtBuildings();
-                    lg.Action(user.username + " applied a filter to all of the courses by the building of the courses.");
-                    //break;
+                    }else if(filter.equals("building")){
+                        Search.filterTxtBuildings();
+                        lg.Action(user.username + " applied a filter to all of the courses by the building of the courses.");
+                        //break;
                     }
                     else {
                         System.out.println("Invalid filter.");
@@ -643,6 +660,22 @@ public class Main {
                     lg.Action(user.username + " has confirmed and saved their schedule with zero conflicts.");
                     System.out.println("Your schedule has been confirmed. See file.");
                 }
+                System.out.println("Would you like to have the schedule emailed to you? (yes/no)");
+                Scanner mailScanner = new Scanner(System.in);
+                String mail = mailScanner.next();
+                if(mail.equalsIgnoreCase("Yes")){
+                    System.out.println("Please enter your email address");
+                    Scanner address = new Scanner(System.in);
+                    String send = address.next();
+                    email.emailSender(send);
+                }
+                else if(mail.equalsIgnoreCase("no")){
+                    System.out.println("Schedule was not emailed. Thank you!");
+                }
+                else{
+                    System.out.println("Please enter yes or no");
+                    mail = mailScanner.next();
+                }
             }
             else if(command.equals("calendar")){
                 int conflicts = ConfirmSchedule.countConflicts(user.schedule);
@@ -657,7 +690,7 @@ public class Main {
                 //a while loop structure so they can observe multiple days
                 while (!calendar.equals("done")){
                     System.out.println("Enter a day of the month to view classes, type 'ind' to view independent studies," +
-                            " or enter 'done' to exit");
+                            " type 'weekly' to see a weekly view, or enter 'done' to exit");
                     System.out.print(">");
                     calendar = calendarScan.next();
 
@@ -666,7 +699,10 @@ public class Main {
                                 , 8, true);
                         System.out.println(ConfirmSchedule.courseListString(classes));
                     }
-                    if(!calendar.equals("ind") && !calendar.equals("done")) {
+                    if(calendar.equalsIgnoreCase("weekly")){
+                        ConfirmSchedule.weeklyView(user.schedule);
+                    }
+                    if(!calendar.equals("ind") && !calendar.equals("done") && !calendar.equals("weekly")) {
                         try {
                             //catch if int is out of bounds
                             dayOfMonth = Integer.parseInt(calendar);
@@ -897,7 +933,7 @@ public class Main {
 
             printScreen(user.name);
 
-           //if user is signed in...
+            //if user is signed in...
             System.out.println("- Type what you'd like to do:");
             System.out.println("  (or type 'list' to see valid commands)\n");
             System.out.print(">");
