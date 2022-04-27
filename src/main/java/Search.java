@@ -116,7 +116,7 @@ public class Search {
 
     public static ArrayList<Course> getKeystroke(String searchInputWithSpace){ //Returns an ArrayList based on keystrokes
         try {
-            File classFile = new File("classFile.txt");
+            File classFile = new File("src/classFile.txt");
             Scanner classScan = new Scanner(classFile);
             String course;
             int index = 0; //Keeps track of what section of the file we're at

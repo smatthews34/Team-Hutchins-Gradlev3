@@ -36,3 +36,49 @@ Apr 26, 2022 11:23:45 PM Logging Action
 INFO: username Successfuly removed the course: BUSA 301  B PRIN OF FINANCE 9:00:00-9:50:00 MWF
 Apr 26, 2022 11:26:45 PM Logging Action
 INFO: username has logged in and begun scheduling.
+Apr 26, 2022 11:36:57 PM Logging Action
+INFO: username has logged in and begun scheduling.
+Apr 26, 2022 11:37:15 PM Logging Action
+INFO: username has auto-generated their course schedule for Senior in the F semester.
+Apr 26, 2022 11:37:17 PM Logging Action
+INFO: username Successfuly removed the course: HUMA 302  B MODERN CIV/INTL 13:00:00-13:50:00 MWF
+Apr 26, 2022 11:37:23 PM Logging Action
+INFO: username Successfuly removed the course: EDUC 312  A MUSIC METHODS 10:05:00-11:20:00 TR
+Apr 26, 2022 11:37:27 PM Logging Action
+INFO: username Successfuly removed the course: COMM 362  A MEDIA LAW/ETHIC 12:00:00-12:50:00 MWF
+Apr 26, 2022 11:37:29 PM Logging Action
+INFO: username has undone their last action
+Apr 26, 2022 11:38:58 PM Logging Action
+INFO: username has logged in and begun scheduling.
+Apr 26, 2022 11:39:17 PM Logging Action
+INFO: username has performed a successful search for: comp
+Apr 26, 2022 11:39:27 PM Logging Action
+INFO: username entered "view".
+Apr 26, 2022 11:39:35 PM Logging Action
+INFO: username has entered the "list" command
+Apr 26, 2022 11:40:07 PM Logging Action
+INFO: username has quit the application.
+Apr 27, 2022 8:10:11 AM Logging Action
+INFO: username has logged in and begun scheduling.
+Apr 27, 2022 8:10:42 AM Logging Action
+INFO: username has logged in and begun scheduling.
+Apr 27, 2022 9:27:28 AM Logging Action
+INFO: username has logged in and begun scheduling.
+Apr 27, 2022 9:33:26 AM Logging Action
+INFO: username has logged in and begun scheduling.
+Apr 27, 2022 9:34:43 AM Logging Action
+INFO: username has logged in and begun scheduling.
+Apr 27, 2022 9:35:02 AM Logging Action
+INFO: username Successfuly removed the course: HUMA 302  C MODERN CIV/INTL 15:00:00-15:50:00 MWF
+Apr 27, 2022 9:36:09 AM Logging Action
+INFO: username has auto-generated their course schedule for Soph in the S semester.
+Apr 27, 2022 9:36:12 AM Logging Action
+INFO: username Successfuly removed the course: HUMA 202  A CIV/LITERATURE 11:00:00-11:50:00 MWF
+Apr 27, 2022 10:00:48 AM Logging Action
+INFO: username has logged in and begun scheduling.
+Apr 27, 2022 10:00:53 AM Logging Action
+INFO: username Successfuly removed the course: SPAN 102  A ELEM SPANISH II 10:00:00-10:50:00 MWF
+Apr 27, 2022 10:00:53 AM Logging Action
+INFO: username Successfuly removed the course: HUMA 301  D CIV/THE ARTS 12:00:00-12:50:00 MWF
+Apr 27, 2022 10:00:53 AM Logging Action
+INFO: username Successfuly removed the course: PHYE 102  A FIT/WELL II-MEN 8:00:00-8:50:00 TR

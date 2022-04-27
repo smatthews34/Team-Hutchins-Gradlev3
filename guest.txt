@@ -12,3 +12,11 @@ Apr 26, 2022 7:56:35 PM Logging Action
 INFO: guest has performed a successful search for: computer
 Apr 26, 2022 7:56:42 PM Logging Action
 INFO: guest has quit the application.
+Apr 27, 2022 9:59:46 AM Logging Action
+INFO: A Guest has started to schedule
+Apr 27, 2022 10:00:01 AM Logging Action
+INFO: guest has entered the "list" command
+Apr 27, 2022 10:00:07 AM Logging Action
+INFO: guest has performed a successful search for: computer
+Apr 27, 2022 10:00:30 AM Logging Action
+INFO: guest has quit the application.
