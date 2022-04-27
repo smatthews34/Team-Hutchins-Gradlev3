@@ -262,7 +262,7 @@ public class Main {
                     if(user.scheduleContains(code)) {
                         Course c = user.getCourse(code);
                         cl.removeClass(c, user.schedule);
-                        lg.Action(user.username + " Successfuly removed the course: " + c);
+                        lg.Action(user.username + " Successfully removed the course: " + c);
                         System.out.println("Course removed.");
                         tempPrint(user.schedule);
                     }
@@ -407,19 +407,39 @@ public class Main {
             }
 
             else if(command.equals("activity")){
+                boolean startT = true,endT = true;
                 Scanner ActScn = new Scanner(System.in);
                 String act = "";
-                String title, start, end, meets;
+                String title, start ="", end="", meets="";
                 while(!act.equals("done") || !act.equals("Done")){
                     System.out.println("Would you like to add an activity to your schedule? If yes enter 'yes'. If not enter 'done'");
                     act = ActScn.next();
                     if(act.equals("yes")||act.equals("Yes")||act.equals("Y")||act.equals("y")){
 
-                        System.out.println("Enter the start time of the Activity.(In military time; ex. 8:00:00)");
-                        start = ActScn.next();
-                        System.out.println("Enter the start time of the Activity.(In military time; ex. 13:00:00)");
-                        end = ActScn.next();
-                        System.out.println("Enter the day(s) that the Activity occurs on.(Ex MWF)");
+                        while(startT) {
+                            System.out.println("Enter the start time of the Activity.(In military time; ex. 8:00:00)");
+                            start = ActScn.next();
+                            if(!start.matches("^([0-9]|0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]$")){
+                                System.out.println("Invalid Time Please try Again in Military Time Please.");
+                                lg.logger.warning(user.username + " has attempted to set the invalid time of: " + start + " for the start time of their personal activity");
+                            }else{
+                                startT = false;
+                                break;
+                            }
+                        }
+                        while (endT) {
+                            System.out.println("Enter the start time of the Activity.(In military time; ex. 13:00:00)");
+                            end = ActScn.next();
+                            if(!end.matches("^([0-9]|0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]$")){
+                                System.out.println("Invalid Time Please try again in military time please.");
+                                lg.logger.warning(user.username + " has attempted to set the invalid time of: " + end + " for the end time of their personal activity");
+                            }else{
+                                endT = false;
+                                break;
+                            }
+                        }
+                        while (!meets.contains("M")&&!meets.contains("T")&&!meets.contains("W")&&!meets.contains("R")&&!meets.contains("F"))
+                            System.out.println("Enter the day(s) that the Activity occurs on.(Ex MWF)");
                         meets = ActScn.next();
                         System.out.println("What is the Name of your Activity you are participating in?");
                         title = ActScn.nextLine();
@@ -482,10 +502,11 @@ public class Main {
                 String filter = "";
                 while(!filter.equals("done")) {
                     System.out.println("What would you like to filter by?");
-                    System.out.println("The options are to filter by: days, time, department or done to exit");
+                    System.out.println("The options are to filter by: days, time, department, building or done to exit");
                     System.out.println("To search by days, enter the first capital letter of that day, ex: MWF");
                     System.out.println("To search by times, enter the start time in military time, ex: 8:00:00");
                     System.out.println("To search by department, enter the code in all capital letters. ex: COMP");
+                    System.out.println("To search by building, enter the building code in all capital letters. ex: STEM");
                     System.out.println("Or enter 'done' if you are done filtering the course.");
                     filter = filterSCNR.nextLine();
                     if(filter.equals("done")||filter.equals("Done")){
@@ -502,7 +523,12 @@ public class Main {
                         Search.filterTxtDepts();
                         lg.Action(user.username + " applied a filter to all of the courses by the department of the courses.");
                         //break;
-                    }else {
+                    } else if(filter.equals("building")){
+                    Search.filterTxtBuildings();
+                    lg.Action(user.username + " applied a filter to all of the courses by the building of the courses.");
+                    //break;
+                    }
+                    else {
                         System.out.println("Invalid filter.");
                         lg.logger.warning(user.username + " username tried filter the courses by an invalid filter option.");
                     }

@@ -143,8 +143,8 @@ public class FXMain extends Application {
             lg.logConflict(user.schedule + " has attempted to add the course: " + cl.getCourse(courseId).toString() + " that conflicts with their schedule but elected not to add it.");
         });
         alertGroup.getChildren().add(alertPane);
-        alertScene.getStylesheets().add("projStyles.css");
-        //alertScene.getStylesheets().add(getClass().getResource("src/css/projStyles.css").toExternalForm());
+        alertScene.getStylesheets().add("src/projStyles.css");
+        //alertScene.getStylesheets().add(getClass().getResource("src/css/src/projStyles.css").toExternalForm());
         alertStg.setScene(alertScene);
         alertStg.show();
     }
@@ -257,7 +257,7 @@ public class FXMain extends Application {
         alertPane.add(yBtn, 0, 3);
 
         alertGroup.getChildren().add(alertPane);
-        alertScene.getStylesheets().add("projStyles.css");
+        alertScene.getStylesheets().add("src/projStyles.css");
         alertStg.setScene(alertScene);
         alertStg.show();
     }
@@ -287,7 +287,7 @@ public class FXMain extends Application {
 
         okBtn.setOnMouseClicked(event -> alertStg.close());
         alertGroup.getChildren().add(alertPane);
-        alertScene.getStylesheets().add("projStyles.css");
+        alertScene.getStylesheets().add("src/projStyles.css");
         alertStg.setScene(alertScene);
         alertStg.show();
     }
@@ -683,7 +683,7 @@ public class FXMain extends Application {
 
         loginGroup.getChildren().add(loginPane);
         loginScene = new Scene(loginGroup, 400, 450);
-        loginScene.getStylesheets().add("projStyles.css");
+        loginScene.getStylesheets().add("src/projStyles.css");
         loginScene.setFill(rgb(245, 238, 238));
 
     }
@@ -751,7 +751,7 @@ public class FXMain extends Application {
 
         signUpGroup.getChildren().add(signUpPane);
         signUpScene = new Scene(signUpGroup, 400, 450);
-        signUpScene.getStylesheets().add("projStyles.css");
+        signUpScene.getStylesheets().add("src/projStyles.css");
         signUpScene.setFill(rgb(245, 238, 238));
 
         signUpStage.setScene(signUpScene);
@@ -901,7 +901,7 @@ public class FXMain extends Application {
 
         nBtn.setOnMouseClicked(event -> alertStg.close());
         alertGroup.getChildren().add(alertPane);
-        alertScene.getStylesheets().add("projStyles.css");
+        alertScene.getStylesheets().add("src/projStyles.css");
         alertStg.setScene(alertScene);
         alertStg.show();
     }
@@ -1160,7 +1160,7 @@ public class FXMain extends Application {
         searchGroup.getChildren().add(searchSplit);
 
         Scene searchScene = new Scene(searchGroup, 925, 600);
-        searchScene.getStylesheets().add("projStyles.css");
+        searchScene.getStylesheets().add("src/projStyles.css");
         searchStage.setScene(searchScene);
         searchStage.setResizable(false);
         searchStage.setTitle("Search");
@@ -1258,7 +1258,7 @@ public class FXMain extends Application {
 
         });
         alertGroup.getChildren().add(alertPane);
-        alertScene.getStylesheets().add("projStyles.css");
+        alertScene.getStylesheets().add("src/projStyles.css");
         alertStg.setScene(alertScene);
         alertStg.show();
 
@@ -1349,7 +1349,7 @@ public class FXMain extends Application {
 
         nBtn.setOnMouseClicked(event -> alertStg.close());
         alertGroup.getChildren().add(alertPane);
-        alertScene.getStylesheets().add("projStyles.css");
+        alertScene.getStylesheets().add("src/projStyles.css");
         alertStg.setScene(alertScene);
         alertStg.show();
 
@@ -1400,7 +1400,7 @@ public class FXMain extends Application {
 
         calendarGroup.getChildren().add(table);
         calendarScene = new Scene(calendarGroup, 645, 400);
-        calendarScene.getStylesheets().add("projStyles.css");
+        calendarScene.getStylesheets().add("src/projStyles.css");
         calendarScene.setFill(rgb(245, 238, 238));
 
         calendarStage.setScene(calendarScene);
