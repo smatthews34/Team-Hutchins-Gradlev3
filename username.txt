@@ -24,3 +24,15 @@ Apr 26, 2022 10:09:16 PM Logging Action
 INFO: username Successfuly removed the course: CHEM 102  B GEN CHEM II 11:00:00-11:50:00 MWF
 Apr 26, 2022 10:11:47 PM Logging Action
 INFO: username has logged in and begun scheduling.
+Apr 26, 2022 11:23:27 PM Logging Action
+INFO: username has logged in and begun scheduling.
+Apr 26, 2022 11:23:36 PM Logging Action
+INFO: username has undone their last action
+Apr 26, 2022 11:23:45 PM Logging Action
+INFO: username Successfuly removed the course: PSYC 200  A CROSS-CULT PSYC 12:00:00-12:50:00 MWF
+Apr 26, 2022 11:23:45 PM Logging Action
+INFO: username Successfuly removed the course: SOCI 221  A WHITE COL CRIME 18:30:00-21:00:00 W
+Apr 26, 2022 11:23:45 PM Logging Action
+INFO: username Successfuly removed the course: BUSA 301  B PRIN OF FINANCE 9:00:00-9:50:00 MWF
+Apr 26, 2022 11:26:45 PM Logging Action
+INFO: username has logged in and begun scheduling.

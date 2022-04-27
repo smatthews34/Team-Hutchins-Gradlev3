@@ -143,8 +143,7 @@ public class FXMain extends Application {
             lg.logConflict(user.schedule + " has attempted to add the course: " + cl.getCourse(courseId).toString() + " that conflicts with their schedule but elected not to add it.");
         });
         alertGroup.getChildren().add(alertPane);
-        alertScene.getStylesheets().add("src/projStyles.css");
-        //alertScene.getStylesheets().add(getClass().getResource("src/css/src/projStyles.css").toExternalForm());
+        alertScene.getStylesheets().add("file:src/projStyles.css");
         alertStg.setScene(alertScene);
         alertStg.show();
     }
@@ -257,7 +256,7 @@ public class FXMain extends Application {
         alertPane.add(yBtn, 0, 3);
 
         alertGroup.getChildren().add(alertPane);
-        alertScene.getStylesheets().add("src/projStyles.css");
+        alertScene.getStylesheets().add("file:src/projStyles.css");
         alertStg.setScene(alertScene);
         alertStg.show();
     }
@@ -287,7 +286,7 @@ public class FXMain extends Application {
 
         okBtn.setOnMouseClicked(event -> alertStg.close());
         alertGroup.getChildren().add(alertPane);
-        alertScene.getStylesheets().add("src/projStyles.css");
+        alertScene.getStylesheets().add("file:src/projStyles.css");
         alertStg.setScene(alertScene);
         alertStg.show();
     }
@@ -358,7 +357,7 @@ public class FXMain extends Application {
         searchPane.setAlignment(Pos.TOP_CENTER);
         headerPane.getChildren().clear();
 
-        Image backImg = new Image("file:back-arrow.png");
+        Image backImg = new Image("file:src/back-arrow.png");
         ImageView backView = new ImageView(backImg);
         backBtn = new Button();
         backBtn.getStyleClass().clear();
@@ -683,7 +682,8 @@ public class FXMain extends Application {
 
         loginGroup.getChildren().add(loginPane);
         loginScene = new Scene(loginGroup, 400, 450);
-        loginScene.getStylesheets().add("src/projStyles.css");
+        loginScene.getStylesheets().add("file:src/projStyles.css");
+        //loginScene.getStylesheets().add(FXMain.class.getResource("file:src/projStyles.css").toExternalForm());
         loginScene.setFill(rgb(245, 238, 238));
 
     }
@@ -751,7 +751,7 @@ public class FXMain extends Application {
 
         signUpGroup.getChildren().add(signUpPane);
         signUpScene = new Scene(signUpGroup, 400, 450);
-        signUpScene.getStylesheets().add("src/projStyles.css");
+        signUpScene.getStylesheets().add("file:src/projStyles.css");
         signUpScene.setFill(rgb(245, 238, 238));
 
         signUpStage.setScene(signUpScene);
@@ -901,7 +901,7 @@ public class FXMain extends Application {
 
         nBtn.setOnMouseClicked(event -> alertStg.close());
         alertGroup.getChildren().add(alertPane);
-        alertScene.getStylesheets().add("src/projStyles.css");
+        alertScene.getStylesheets().add("file:src/projStyles.css");
         alertStg.setScene(alertScene);
         alertStg.show();
     }
@@ -928,25 +928,25 @@ public class FXMain extends Application {
         headerPane = new GridPane();
 
         undoBtn = new Button();
-        Image undoImg = new Image("file:undo.png");
+        Image undoImg = new Image("file:src/undo.png");
         ImageView undoView = new ImageView(undoImg);
         undoBtn.setGraphic(undoView);
         undoBtn.setOnAction(undoHandler);
 
 
-        Image redoImg = new Image("file:redo.png");
+        Image redoImg = new Image("file:src/redo.png");
         ImageView redoView = new ImageView(redoImg);
         redoBtn = new Button();
         redoBtn.setGraphic(redoView);
         redoBtn.setOnAction(redoHandler);
 
-        Image confirmImg = new Image("file:confirm.png");
+        Image confirmImg = new Image("file:src/confirm.png");
         ImageView confirmView = new ImageView(confirmImg);
         confirmBtn = new Button();
         confirmBtn.setGraphic(confirmView);
         confirmBtn.setOnMouseClicked(event->openConfirmAlert());
 
-        Image calendarImg = new Image("file:cal.png");
+        Image calendarImg = new Image("file:src/cal.png");
         ImageView calendarView = new ImageView(calendarImg);
         calendarBtn = new Button();
         calendarBtn.setGraphic(calendarView);
@@ -1160,7 +1160,7 @@ public class FXMain extends Application {
         searchGroup.getChildren().add(searchSplit);
 
         Scene searchScene = new Scene(searchGroup, 925, 600);
-        searchScene.getStylesheets().add("src/projStyles.css");
+        searchScene.getStylesheets().add("file:src/projStyles.css");
         searchStage.setScene(searchScene);
         searchStage.setResizable(false);
         searchStage.setTitle("Search");
@@ -1258,7 +1258,7 @@ public class FXMain extends Application {
 
         });
         alertGroup.getChildren().add(alertPane);
-        alertScene.getStylesheets().add("src/projStyles.css");
+        alertScene.getStylesheets().add("file:src/projStyles.css");
         alertStg.setScene(alertScene);
         alertStg.show();
 
@@ -1349,7 +1349,8 @@ public class FXMain extends Application {
 
         nBtn.setOnMouseClicked(event -> alertStg.close());
         alertGroup.getChildren().add(alertPane);
-        alertScene.getStylesheets().add("src/projStyles.css");
+
+        alertScene.getStylesheets().add("file:src/projStyles.css");
         alertStg.setScene(alertScene);
         alertStg.show();
 
@@ -1400,7 +1401,7 @@ public class FXMain extends Application {
 
         calendarGroup.getChildren().add(table);
         calendarScene = new Scene(calendarGroup, 645, 400);
-        calendarScene.getStylesheets().add("src/projStyles.css");
+        calendarScene.getStylesheets().add("file:src/projStyles.css");
         calendarScene.setFill(rgb(245, 238, 238));
 
         calendarStage.setScene(calendarScene);
@@ -1419,7 +1420,7 @@ public class FXMain extends Application {
         hasConflict = false;
         hasMax = false;
         loginStageC = loginStage;
-        appImg = new Image("file:app-icn.png");
+        appImg = new Image("file:src/app-icn.png");
 
         launchLogin();
 
