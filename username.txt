@@ -1,0 +1,18 @@
+Apr 27, 2022 1:12:34 PM Logging Action
+INFO: username has logged in and begun scheduling.
+Apr 27, 2022 1:13:27 PM Logging Action
+INFO: username has logged in and begun scheduling.
+Apr 27, 2022 1:14:44 PM Logging Action
+INFO: username has logged in and begun scheduling.
+Apr 27, 2022 1:15:01 PM Logging logConflict
+WARNING: username has attempted to add the course: PHYS 102  M    L LAB WORKSHOP 14:00:00-16:00:00 F, that is a duplicate of a course on their current schedule.
+Apr 27, 2022 1:15:10 PM Logging logConflict
+WARNING: username has attempted to add the course: PHYS 102  M    L LAB WORKSHOP 14:00:00-16:00:00 F, that is a duplicate of a course on their current schedule.
+Apr 27, 2022 1:15:25 PM Logging logConflict
+WARNING: username added the course: BIOL 208  A INT ENVIR EDUC 14:00:00-15:59:00 F that conflicts with a course on their schedule.
+Apr 27, 2022 1:15:28 PM Logging logConflict
+WARNING: username added the course: BIOL 208  A INT ENVIR EDUC 14:00:00-15:59:00 F that conflicts with a course on their schedule.
+Apr 27, 2022 1:15:52 PM Logging Action
+INFO: username Successfuly removed the course: BIOL 208  A INT ENVIR EDUC 14:00:00-15:59:00 F
+Apr 27, 2022 1:15:52 PM Logging Action
+INFO: username Successfuly resolved a time conflict from the course: BIOL 208  A INT ENVIR EDUC 14:00:00-15:59:00 F
