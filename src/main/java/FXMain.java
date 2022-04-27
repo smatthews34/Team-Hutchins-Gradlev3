@@ -570,6 +570,7 @@ public class FXMain extends Application {
             String name = newNameField.getText();
 
             Signup s = new Signup(username, password, name);
+            s.email = email;
 
             if (username.equals("")) {
                 msgLbl.setText("Username is null, please try again");
@@ -611,7 +612,7 @@ public class FXMain extends Application {
                 loginPane.add(badLoginLbl, 0, 7);
             } else {
                 user = new User(potentialUser.username, potentialUser.password, potentialUser.name);
-                user.setEmail(email);
+                user.setEmail(potentialUser.email);
                 cl = new CourseList();
                 try {
                     lg = new Logging(user.username);

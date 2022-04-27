@@ -16,6 +16,7 @@ public class Login {
     public String username;
     public String password;
     public String name;
+    public String email = "";
 
     public Login (String username, String password) {
         this.username = username;
@@ -24,7 +25,9 @@ public class Login {
 
     public User loginSubmit() {
         if (checkMatch() == 0) {
-            return new User(username, password, name);
+            User u = new User(username, password, name);
+            u.email = email;
+            return u;
         }
         else {
             return null;
@@ -43,6 +46,9 @@ public class Login {
                 String fileUsername = fileScan.next();
                 String filePassword = fileScan.next();
                 name = fileScan.next();
+                if (fileScan.hasNext()){
+                    email = fileScan.next();
+                }
                 if (fileUsername.equals(username) && filePassword.equals(password)){
                     fileScan.close();
                     file.delete();
