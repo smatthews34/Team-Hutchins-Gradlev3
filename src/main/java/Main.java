@@ -754,32 +754,72 @@ public class Main {
                     System.out.print(">");
                     addOption = searchScan.next();
                     if (addOption.equals("yes") || addOption.equals("Yes")) {
-                        while (!addOption.equals("No") && !addOption.equals("no")) {
-                            System.out.println("Enter course in the format: CODE ### A, to be added or enter 'no' if finished adding: ");
+                        String addO = "";
+                        while (!addO.equals("done")) {
+                            System.out.println("Enter course in the format: \"CODE ### A\" or for a lab \"CODE ### A L\", to be added or enter 'done' if finished adding: ");
                             System.out.print(">");
-                            addOption = add.nextLine();
-                            if (!addOption.equals("No") && !addOption.equals("no")) {
-                                Course a = cl.getCourse(addOption);
-                                if (a != null) {
-                                    Boolean c = cl.checkConfliction(a, user.schedule);
-                                    Boolean d = cl.checkDouble(a, user.schedule);
+                            addO = add.nextLine();
+                            if (!addO.equals("done")) {
+                                if(addO.charAt(addO.length()-1) == 'L' && addO.length() == 12){
+                                    char c = addO.charAt(addO.length()-3);
+                                    addO = addO.substring(0,addO.length()-3);
+                                    addO = addO + " " + c + "    L";
+                                }else{
+                                    char c = addO.charAt(addO.length()-1);
+                                    addO = addO.substring(0,addO.length()-1);
+                                    addO = addO + " " + c;
+                                }
+                                Course a = cl.getCourse(addO);
 
-                                    cl.addClass(a, user.schedule);
-                                    if (d) {
-                                        lg.logConflict(user.username + " has attempted to add from the search the course: " + a + ", that conflicts with a course on their current schedule.");
-                                    } else if (c && user.schedule.contains(a)) {
-                                        lg.logConflict(user.username + " added the course: " + a + " from the search that conflicts with a course on their schedule.");
-                                    } else if (c && !user.schedule.contains(a)) {
-                                        lg.logConflict(user.schedule + " has attempted to add from search the course: " + a + ", that conflicts with their schedule but elected not to add it.");
-                                    } else {
-                                        lg.Action(user.username + " has added the course: " + a + " from the search");
+                                if (a != null) {
+                                    Boolean c = cl.checkConfliction(a,user.schedule);
+                                    Boolean d = cl.checkDouble(a, user.schedule);
+                                    //cl.addClass(a, user.schedule);
+                                    //*****avoid the conflict and duplicate*****
+                                    //checks to see if the course being added is a duplicate.
+                                    if(cl.checkDouble(a, user.schedule)){
+                                        System.out.println("That course already is on your schedule, cannot be added.");
+                                    }else if(cl.checkConfliction(a, user.schedule)){ //checks to see if the course conflicts
+                                        System.out.println("There is a time conflict with your schedule."); //alerts the user there is a conflict
+                                        Scanner scn = new Scanner(System.in);
+                                        String answer = "";
+                                        while (!answer.equals("No")&&!answer.equals("no")&&!answer.equals("yes")&&!answer.equals("Yes")&&!answer.equals("N")&&!answer.equals("n")&&!answer.equals("Y")&&!answer.equals("y")) { //gives the user the ability to add if conflicting.
+                                            System.out.println("Would you like to add anyway? (Y/N");
+                                            answer = scn.next();
+                                            if (answer.equals("Y") || answer.equals("y") || answer.equals("yes") || answer.equals("Yes")) {
+                                                user.schedule.add(a);
+                                                cl.addClass(a,user.schedule);
+                                                System.out.println("Conflicting course added.");
+                                                //cl.updateHistory("add", a);
+                                                break;
+                                            } else if (answer.equals("N") || answer.equals("n") || answer.equals("no") || answer.equals("No")) {
+                                                System.out.println("Conflicting course was not added.");
+                                                break;
+                                            } else {
+                                                System.out.println("Invalid response please select Y or N.");
+                                            }
+                                        }
+                                    }else{ //if the course is not a duplicate or a not conflicting course it wil be added to the user's schedule.
+                                        //cl.updateHistory("add", a);
+                                        user.schedule.add(a);
+                                        cl.addClass(a,user.schedule);
+                                        System.out.println("The course has successfully been added to your schedule.");
                                     }
-                                    System.out.println("Would you like to add another course from the search? (Yes/No)");
-                                    System.out.print(">");
-                                    addOption = add.next();
+                                    //
+                                    if(d){
+                                        lg.logConflict(user.username + " has attempted to add the course: " + a + ", that is a duplicate of a course on their current schedule.");
+                                    }else if(c && user.schedule.contains(a)){
+                                        lg.logConflict(user.username + " added the course: " + a + " that conflicts with a course on their schedule.");
+                                    }else if(c && !user.schedule.contains(a)){
+                                        lg.logConflict(user.schedule + " has attempted to add the course: " + a + " that conflicts with their schedule but elected not to add it.");
+                                    }else{
+                                        lg.Action(user.username + " has added the course: " + a + ".");
+                                    }
                                 } else {
-                                    System.out.println("Please enter a valid class.");
-                                    lg.logger.warning(user.username + " tried to add the invalid course: " + addOption + " from the search.");
+                                    if (!addO.equalsIgnoreCase("done")){
+                                        System.out.println("Please enter a valid class.");
+                                        lg.logger.warning(user.username + " added the invalid course: " + addO);
+                                    }
                                 }
                             }
                         }
