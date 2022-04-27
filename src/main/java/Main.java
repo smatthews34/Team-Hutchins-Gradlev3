@@ -408,6 +408,7 @@ public class Main {
             else if(command.equals("activity")){
                 boolean startT = true,endT = true;
                 Scanner ActScn = new Scanner(System.in);
+                Scanner titleScan = new Scanner(System.in);
                 String act = "";
                 String title = "", start ="", end="", meets="";
                 while(!act.equals("done") || !act.equals("Done")){
@@ -437,9 +438,10 @@ public class Main {
                                 break;
                             }
                         }
-                        while (!meets.matches("[M,T,W,R,F]*")) {
+                        while (!meets.matches("[M,T,W,R,F]")) {
                             System.out.println("Enter the day(s) that the Activity occurs on.(Ex MWF)");
                             meets = ActScn.next();
+                            //Uses Regular Expressions to check if the string matches the language of (M,T,W,R,F)* and not doubles
                             if(meets.matches("[M,T,W,R,F]*")&&(!meets.contains("MM")&&!meets.contains("TT")&&!meets.contains("WW")&&!meets.contains("RR")&&!meets.contains("FF"))) {
                                 break;
                             }else {
@@ -448,7 +450,7 @@ public class Main {
                         }
                         while(title.equals("")) {
                             System.out.println("What is the Name of your Activity you are participating in?");
-                            title = ActScn.nextLine();
+                            title = titleScan.nextLine();
                             if(title.equals("")){
                                 System.out.println("Please enter the name of activity.");
                                 lg.logger.warning(user.username + " has not entered a name of the activity.");
@@ -468,7 +470,7 @@ public class Main {
                             lg.Action(user.username + " has added the activity " + c);
                         }
                     }
-                    System.out.println("Would you like to add another activity? (Y/N)");
+                    System.out. println("Would you like to add another activity? (Y/N)");
                     act = ActScn.next();
                     if(act.equals("N")||act.equals("No")||act.equals("n")||act.equals("no")){
                         lg.Action(user.username + " has elected not to add another activity.");
@@ -477,6 +479,10 @@ public class Main {
                         System.out.println("Invalid response, exiting to main screen.");
                         lg.logger.warning(user.username + " has inputted an invalid response when asked if they would like to add another personal activity.");
                     }
+                    title = "";
+                    start ="";
+                    end="";
+                    meets="";
                 }
             }
 
