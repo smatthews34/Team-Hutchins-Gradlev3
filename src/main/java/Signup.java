@@ -11,9 +11,10 @@ import java.security.spec.KeySpec;
 import java.util.Scanner;
 
 public class Signup {
-    String username;
-    String password;
-    String name;
+    public String username;
+    public String password;
+    public String name;
+    public String email = "";
 
     public Signup(String username, String password, String name){
         this.username = username;
@@ -41,21 +42,24 @@ public class Signup {
                     fileScan.close();
                     file.delete();
                 }
-                    boolean worked = file.createNewFile();
-                    if (worked){
-                        FileWriter fw = new FileWriter(file);
-                        fw.write(username + "\n");
-                        fw.write(password + "\n");
-                        fw.write(name);
-                        fw.close();
-                        AESEncryption();
-                        file.delete();
-                        return 0; //No errors
+                boolean worked = file.createNewFile();
+                if (worked){
+                    FileWriter fw = new FileWriter(file);
+                    fw.write(username + "\n");
+                    fw.write(password + "\n");
+                    fw.write(name + "\n");
+                    if (!email.equals("")){
+                        fw.write(email);
                     }
-                    else{
-                        System.out.println("Could not open new file to log in, please try again");
-                        return 1;
-                    }
+                    fw.close();
+                    AESEncryption();
+                    file.delete();
+                    return 0; //No errors
+                }
+                else{
+                    System.out.println("Could not open new file to log in, please try again");
+                    return 1;
+                }
 
                 //Submit to the database potentially or encryption/decryption
                 //Log the user in
