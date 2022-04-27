@@ -182,7 +182,7 @@ public class Search {
         boolean header = true;
 
         try {
-            br = new BufferedReader(new FileReader("classFile.txt"));
+            br = new BufferedReader(new FileReader("src/classFile.txt"));
             // while there is still data left in the file
             while ((line = br.readLine()) != null) {
                 // this will make sure the header is not added to the map
@@ -253,7 +253,7 @@ public class Search {
         boolean header = true;
 
         try {
-            br = new BufferedReader(new FileReader("classFile.txt"));
+            br = new BufferedReader(new FileReader("src/classFile.txt"));
             // while there is still data left in the file
             while ((line = br.readLine()) != null) {
                 // this will make sure the header is not added to the map
@@ -322,7 +322,7 @@ public class Search {
         boolean header = true;
 
         try {
-            br = new BufferedReader(new FileReader("classFileDeptFilter.txt"));
+            br = new BufferedReader(new FileReader("src/classFileDeptFilter.txt"));
             // while there is still data left in the file
             while ((line = br.readLine()) != null) {
                 // this will make sure the header is not added to the map
@@ -390,7 +390,7 @@ public class Search {
         boolean header = true;
 
         try {
-            br = new BufferedReader(new FileReader("classFile.txt"));
+            br = new BufferedReader(new FileReader("src/classFile.txt"));
             // while there is still data left in the file
             while ((line = br.readLine()) != null) {
                 // this will make sure the header is not added to the map
