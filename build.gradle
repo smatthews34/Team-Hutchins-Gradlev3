@@ -2,7 +2,7 @@ plugins {
     id 'groovy'
     id 'java'
     id 'application'
-    id 'org.openjfx.javafxplugin' version '0.0.10'
+    id 'org.openjfx.javafxplugin' version '0.0.12'
 }
 
 group 'org.example'
@@ -16,7 +16,7 @@ dependencies {
     implementation 'org.codehaus.groovy:groovy-all:3.0.5'
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
-    implementation group: 'javax.mail', name: 'mail', version: '1.4.1'
+    implementation group: 'com.sun.mail', name: 'javax.mail', version: '1.6.2'
     implementation group: 'org.apache.poi', name: 'poi', version: '5.2.2'
     implementation group: 'org.apache.poi', name: 'poi-ooxml', version: '5.2.2'
 }
@@ -26,6 +26,6 @@ test {
 }
 
 javafx {
-    version = '17.0.1'
+    version = '18.0.1'
     modules = [ 'javafx.controls' ]
 }

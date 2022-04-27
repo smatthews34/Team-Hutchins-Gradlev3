@@ -16,3 +16,37 @@ Apr 27, 2022 1:15:52 PM Logging Action
 INFO: username Successfuly removed the course: BIOL 208  A INT ENVIR EDUC 14:00:00-15:59:00 F
 Apr 27, 2022 1:15:52 PM Logging Action
 INFO: username Successfuly resolved a time conflict from the course: BIOL 208  A INT ENVIR EDUC 14:00:00-15:59:00 F
+Apr 27, 2022 1:21:45 PM Logging Action
+INFO: username has logged in and begun scheduling.
+Apr 27, 2022 1:26:59 PM Logging Action
+INFO: username has logged in and begun scheduling.
+Apr 27, 2022 1:41:38 PM Logging Action
+INFO: username has logged in and begun scheduling.
+Apr 27, 2022 1:43:47 PM Logging Action
+INFO: username has logged in and begun scheduling.
+Apr 27, 2022 1:43:53 PM Logging Action
+INFO: username Successfuly removed the course: PSYC 209  B CHILD DEVELOP 13:00:00-14:15:00 TR
+Apr 27, 2022 1:52:59 PM Logging Action
+INFO: username has logged in and begun scheduling.
+Apr 27, 2022 1:56:40 PM Logging Action
+INFO: username has logged in and begun scheduling.
+Apr 27, 2022 1:56:51 PM Logging Action
+INFO: username has entered the "list" command
+Apr 27, 2022 1:57:14 PM Logging Action
+INFO: username has auto-generated their course schedule for Fresh in the F semester.
+Apr 27, 2022 1:57:18 PM Logging Action
+INFO: username entered "view".
+Apr 27, 2022 1:57:27 PM Logging Action
+INFO: username entered "view".
+Apr 27, 2022 1:57:33 PM Main main
+WARNING: Invalid Input: schedule
+Apr 27, 2022 1:57:37 PM Logging Action
+INFO: username has entered the "list" command
+Apr 27, 2022 1:57:42 PM Logging Action
+INFO: username has confirmed and saved their schedule with zero conflicts.
+Apr 27, 2022 1:58:16 PM Logging Action
+INFO: username has quit the application.
+Apr 27, 2022 2:23:51 PM Logging Action
+INFO: username has logged in and begun scheduling.
+Apr 27, 2022 2:30:36 PM Logging Action
+INFO: username has logged in and begun scheduling.
