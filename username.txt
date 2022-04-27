@@ -1,0 +1,26 @@
+Apr 26, 2022 10:00:35 PM Logging Action
+INFO: username has logged in and begun scheduling.
+Apr 26, 2022 10:00:44 PM Logging Action
+INFO: username has performed a successful search for: computer
+Apr 26, 2022 10:01:07 PM Logging Action
+INFO: username has added the course: COMP 314  A FOUN COMP SCI 10:00:00-10:50:00 MWF.
+Apr 26, 2022 10:01:21 PM Logging Action
+INFO: username entered "view".
+Apr 26, 2022 10:01:25 PM Main main
+WARNING: Invalid Input: wuit
+Apr 26, 2022 10:01:29 PM Logging Action
+INFO: username has quit the application.
+Apr 26, 2022 10:07:20 PM Logging Action
+INFO: username has logged in and begun scheduling.
+Apr 26, 2022 10:08:55 PM Logging Action
+INFO: username has logged in and begun scheduling.
+Apr 26, 2022 10:09:12 PM Logging Action
+INFO: username has auto-generated their course schedule for Fresh in the F semester.
+Apr 26, 2022 10:09:14 PM Logging Action
+INFO: username Successfuly removed the course: HUMA 102  A CIV/BIB REV 8:00:00-8:50:00 MWF
+Apr 26, 2022 10:09:15 PM Logging Action
+INFO: username Successfuly removed the course: CHEM 102  O    L LABORATORY 14:00:00-16:59:00 F
+Apr 26, 2022 10:09:16 PM Logging Action
+INFO: username Successfuly removed the course: CHEM 102  B GEN CHEM II 11:00:00-11:50:00 MWF
+Apr 26, 2022 10:11:47 PM Logging Action
+INFO: username has logged in and begun scheduling.

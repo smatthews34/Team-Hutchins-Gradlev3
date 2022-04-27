@@ -1,0 +1,374 @@
+Apr 23, 2022 6:09:23 PM Logging Action
+INFO: A Guest has started to schedule
+Apr 23, 2022 6:09:31 PM Logging Action
+INFO: guest has performed a successful search for: comp
+Apr 23, 2022 6:09:50 PM Logging Action
+INFO: guest has performed a successful search for: comp
+Apr 23, 2022 6:22:40 PM Logging Action
+INFO: A Guest has started to schedule
+Apr 23, 2022 6:24:40 PM Logging Action
+INFO: guest applied a filter to all of the courses by the department of the courses.
+Apr 23, 2022 6:24:50 PM Logging Action
+INFO: guest applied a filter to all of the courses by the department of the courses.
+Apr 24, 2022 1:22:12 PM Logging Action
+INFO: A Guest has started to schedule
+Apr 24, 2022 1:22:23 PM Logging Action
+INFO: guest has performed a successful search for: computer
+Apr 24, 2022 1:24:47 PM Logging Action
+INFO: A Guest has started to schedule
+Apr 24, 2022 1:24:53 PM Logging Action
+INFO: guest has performed a successful search for: computer
+Apr 24, 2022 1:25:08 PM Main main
+WARNING: Invalid Input: Yes
+Apr 24, 2022 1:29:37 PM Logging Action
+INFO: A Guest has started to schedule
+Apr 24, 2022 1:29:42 PM Logging Action
+INFO: guest has performed a successful search for: computer
+Apr 24, 2022 1:31:31 PM Logging Action
+INFO: A Guest has started to schedule
+Apr 24, 2022 1:31:37 PM Logging Action
+INFO: guest has performed a successful search for: computer
+Apr 24, 2022 1:38:33 PM Logging Action
+INFO: A Guest has started to schedule
+Apr 24, 2022 1:38:39 PM Logging Action
+INFO: guest has performed a successful search for: computer
+Apr 24, 2022 1:40:44 PM Logging Action
+INFO: A Guest has started to schedule
+Apr 24, 2022 1:40:50 PM Logging Action
+INFO: guest has performed a successful search for: computer
+Apr 24, 2022 1:46:05 PM Logging Action
+INFO: A Guest has started to schedule
+Apr 24, 2022 1:46:11 PM Logging Action
+INFO: guest has performed a successful search for: computer
+Apr 24, 2022 1:47:01 PM Logging Action
+INFO: A Guest has started to schedule
+Apr 24, 2022 1:47:07 PM Logging Action
+INFO: guest has performed a successful search for: computer
+Apr 24, 2022 1:49:09 PM Logging Action
+INFO: A Guest has started to schedule
+Apr 24, 2022 1:49:15 PM Main main
+WARNING: guest has performed a search that yielded no results for: cmputer
+Apr 24, 2022 1:49:19 PM Main main
+WARNING: Invalid Input: computer
+Apr 24, 2022 1:49:25 PM Logging Action
+INFO: guest has performed a successful search for: computer
+Apr 24, 2022 1:55:32 PM Logging Action
+INFO: A Guest has started to schedule
+Apr 24, 2022 1:55:39 PM Logging Action
+INFO: guest has performed a successful search for: computer
+Apr 24, 2022 1:57:10 PM Logging Action
+INFO: A Guest has started to schedule
+Apr 24, 2022 1:57:26 PM Logging Action
+INFO: guest has performed a successful search for: computer
+Apr 24, 2022 1:58:40 PM Logging Action
+INFO: A Guest has started to schedule
+Apr 24, 2022 1:58:45 PM Logging Action
+INFO: guest has performed a successful search for: computer
+Apr 24, 2022 2:00:01 PM Logging Action
+INFO: A Guest has started to schedule
+Apr 24, 2022 2:00:07 PM Logging Action
+INFO: guest has performed a successful search for: computer
+Apr 24, 2022 2:05:36 PM Logging Action
+INFO: A Guest has started to schedule
+Apr 24, 2022 2:05:42 PM Logging Action
+INFO: guest has performed a successful search for: omputer
+Apr 24, 2022 2:06:49 PM Logging Action
+INFO: A Guest has started to schedule
+Apr 24, 2022 2:07:04 PM Logging Action
+INFO: guest has performed a successful search for: computer
+Apr 24, 2022 2:08:20 PM Logging Action
+INFO: A Guest has started to schedule
+Apr 24, 2022 2:08:30 PM Logging Action
+INFO: guest has performed a successful search for: computer
+Apr 24, 2022 2:09:46 PM Logging Action
+INFO: A Guest has started to schedule
+Apr 24, 2022 2:09:51 PM Logging Action
+INFO: guest has performed a successful search for: computer
+Apr 24, 2022 2:56:18 PM Logging Action
+INFO: A Guest has started to schedule
+Apr 24, 2022 2:56:24 PM Logging Action
+INFO: guest has performed a successful search for: computer
+Apr 24, 2022 2:59:51 PM Logging Action
+INFO: A Guest has started to schedule
+Apr 24, 2022 3:00:13 PM Logging Action
+INFO: guest has performed a successful search for: computer
+Apr 24, 2022 3:00:49 PM Logging Action
+INFO: guest has performed a successful search for: computer
+Apr 24, 2022 3:03:00 PM Logging Action
+INFO: guest has performed a successful search for: computer
+Apr 24, 2022 3:10:01 PM Logging Action
+INFO: A Guest has started to schedule
+Apr 24, 2022 3:10:37 PM Logging Action
+INFO: guest has performed a successful search for: computer
+Apr 24, 2022 3:12:15 PM Logging Action
+INFO: A Guest has started to schedule
+Apr 24, 2022 3:12:22 PM Logging Action
+INFO: guest has performed a successful search for: computer
+Apr 24, 2022 3:16:01 PM Logging Action
+INFO: A Guest has started to schedule
+Apr 24, 2022 3:16:21 PM Logging Action
+INFO: guest has performed a successful search for: computer
+Apr 24, 2022 3:16:53 PM Logging Action
+INFO: guest has performed a successful search for: computer
+Apr 24, 2022 3:23:16 PM Logging Action
+INFO: A Guest has started to schedule
+Apr 24, 2022 3:24:42 PM Logging Action
+INFO: guest has performed a successful search for: computer
+Apr 24, 2022 3:36:58 PM Logging Action
+INFO: A Guest has started to schedule
+Apr 24, 2022 3:37:09 PM Logging Action
+INFO: guest has performed a successful search for: computer
+Apr 24, 2022 3:38:03 PM Logging Action
+INFO: A Guest has started to schedule
+Apr 24, 2022 3:38:20 PM Logging Action
+INFO: guest has performed a successful search for: computer
+Apr 24, 2022 3:40:31 PM Logging Action
+INFO: A Guest has started to schedule
+Apr 24, 2022 3:40:38 PM Logging Action
+INFO: guest has performed a successful search for: computer
+Apr 24, 2022 3:42:35 PM Logging Action
+INFO: A Guest has started to schedule
+Apr 24, 2022 3:42:50 PM Logging Action
+INFO: A Guest has started to schedule
+Apr 24, 2022 3:42:56 PM Logging Action
+INFO: guest has performed a successful search for: computer
+Apr 24, 2022 3:43:58 PM Logging Action
+INFO: A Guest has started to schedule
+Apr 24, 2022 3:44:06 PM Logging Action
+INFO: guest has performed a successful search for: computer
+Apr 24, 2022 3:48:29 PM Logging Action
+INFO: A Guest has started to schedule
+Apr 24, 2022 3:48:36 PM Logging Action
+INFO: guest has performed a successful search for: computer
+Apr 24, 2022 3:50:37 PM Logging Action
+INFO: A Guest has started to schedule
+Apr 24, 2022 3:50:43 PM Logging Action
+INFO: guest has performed a successful search for: computer
+Apr 24, 2022 3:51:31 PM Logging Action
+INFO: A Guest has started to schedule
+Apr 24, 2022 3:51:50 PM Main main
+WARNING: guest has performed a search that yielded no results for: coputer
+Apr 24, 2022 3:51:56 PM Logging Action
+INFO: guest has performed a successful search for: computer
+Apr 24, 2022 3:53:03 PM Logging Action
+INFO: A Guest has started to schedule
+Apr 24, 2022 3:53:11 PM Logging Action
+INFO: guest has performed a successful search for: computer
+Apr 24, 2022 3:53:35 PM Logging Action
+INFO: A Guest has started to schedule
+Apr 24, 2022 3:53:41 PM Logging Action
+INFO: guest has performed a successful search for: computer
+Apr 24, 2022 3:54:36 PM Logging Action
+INFO: A Guest has started to schedule
+Apr 24, 2022 3:54:53 PM Logging Action
+INFO: guest has performed a successful search for: computer
+Apr 24, 2022 3:55:51 PM Logging Action
+INFO: A Guest has started to schedule
+Apr 24, 2022 3:55:59 PM Logging Action
+INFO: guest has performed a successful search for: COMPUTER
+Apr 24, 2022 4:00:33 PM Logging Action
+INFO: A Guest has started to schedule
+Apr 24, 2022 4:00:42 PM Logging Action
+INFO: guest has performed a successful search for: computer
+Apr 24, 2022 4:02:11 PM Logging Action
+INFO: A Guest has started to schedule
+Apr 24, 2022 4:02:16 PM Logging Action
+INFO: guest has performed a successful search for: computer
+Apr 24, 2022 4:03:38 PM Logging Action
+INFO: A Guest has started to schedule
+Apr 24, 2022 4:03:44 PM Logging Action
+INFO: guest has performed a successful search for: computer
+Apr 24, 2022 4:05:44 PM Logging Action
+INFO: A Guest has started to schedule
+Apr 24, 2022 4:05:53 PM Logging Action
+INFO: guest has performed a successful search for: computer
+Apr 24, 2022 4:07:59 PM Logging Action
+INFO: A Guest has started to schedule
+Apr 24, 2022 4:08:04 PM Main main
+WARNING: guest has performed a search that yielded no results for: coputer
+Apr 24, 2022 4:08:10 PM Main main
+WARNING: guest has performed a search that yielded no results for: comuter
+Apr 24, 2022 4:08:15 PM Logging Action
+INFO: guest has performed a successful search for: computer
+Apr 24, 2022 4:12:05 PM Logging Action
+INFO: A Guest has started to schedule
+Apr 24, 2022 4:12:11 PM Logging Action
+INFO: guest has performed a successful search for: computer
+Apr 24, 2022 4:13:26 PM Logging Action
+INFO: A Guest has started to schedule
+Apr 24, 2022 4:13:43 PM Logging Action
+INFO: guest has performed a successful search for: computer
+Apr 24, 2022 4:14:21 PM Logging Action
+INFO: A Guest has started to schedule
+Apr 24, 2022 4:14:32 PM Logging Action
+INFO: guest has performed a successful search for: computer
+Apr 24, 2022 4:15:07 PM Logging Action
+INFO: guest has quit the application.
+Apr 24, 2022 4:17:31 PM Logging Action
+INFO: A Guest has started to schedule
+Apr 24, 2022 4:17:48 PM Logging Action
+INFO: guest has performed a successful search for: computer
+Apr 24, 2022 4:18:13 PM Logging Action
+INFO: guest has added the course: COMP 314  A FOUN COMP SCI 10:00:00-10:50:00 MWF from the search
+Apr 24, 2022 4:19:44 PM Logging Action
+INFO: A Guest has started to schedule
+Apr 24, 2022 4:20:01 PM Logging Action
+INFO: guest has performed a successful search for: computer
+Apr 24, 2022 4:20:38 PM Main main
+WARNING: guest tried to add the invalid course: comp 314  A from the search.
+Apr 24, 2022 4:20:57 PM Logging Action
+INFO: guest has added the course: COMP 314  A FOUN COMP SCI 10:00:00-10:50:00 MWF from the search
+Apr 24, 2022 4:21:04 PM Main main
+WARNING: guest tried to add the invalid course:  from the search.
+Apr 24, 2022 4:21:18 PM Logging logConflict
+WARNING: guest has attempted to add from the search the course: COMP 314  A FOUN COMP SCI 10:00:00-10:50:00 MWF, that conflicts with a course on their current schedule.
+Apr 24, 2022 4:21:22 PM Main main
+WARNING: guest tried to add the invalid course:  from the search.
+Apr 24, 2022 4:21:35 PM Logging Action
+INFO: guest has added the course: COMP 252  A COMP ARCH ORG 11:00:00-11:50:00 MWF from the search
+Apr 24, 2022 4:22:00 PM Main main
+WARNING: guest tried to add the invalid course:  from the search.
+Apr 24, 2022 4:22:16 PM Logging logConflict
+WARNING: guest added the course: ELEE 442  A COMPUTER II 11:00:00-11:50:00 MWF from the search that conflicts with a course on their schedule.
+Apr 24, 2022 4:22:21 PM Logging Action
+INFO: guest entered "view".
+Apr 24, 2022 4:22:26 PM Logging Action
+INFO: guest has quit the application.
+Apr 24, 2022 4:22:40 PM Logging Action
+INFO: A Guest has started to schedule
+Apr 24, 2022 4:22:47 PM Logging Action
+INFO: guest has performed a successful search for: computer
+Apr 24, 2022 4:23:19 PM Main main
+WARNING: guest tried to add the invalid course: COMP 333 from the search.
+Apr 24, 2022 4:23:28 PM Logging Action
+INFO: guest has added the course: COMP 314  A FOUN COMP SCI 10:00:00-10:50:00 MWF from the search
+Apr 24, 2022 4:23:31 PM Main main
+WARNING: guest tried to add the invalid course:  from the search.
+Apr 24, 2022 4:28:12 PM Logging Action
+INFO: A Guest has started to schedule
+Apr 24, 2022 4:28:19 PM Logging Action
+INFO: guest has performed a successful search for: computer
+Apr 24, 2022 4:31:28 PM Logging Action
+INFO: A Guest has started to schedule
+Apr 24, 2022 4:31:41 PM Logging Action
+INFO: guest has performed a successful search for: computer
+Apr 24, 2022 4:32:18 PM Logging Action
+INFO: guest has added the course: COMP 314  A FOUN COMP SCI 10:00:00-10:50:00 MWF.
+Apr 24, 2022 4:32:47 PM Logging Action
+INFO: guest entered "view".
+Apr 24, 2022 5:52:30 PM Logging Action
+INFO: A Guest has started to schedule
+Apr 24, 2022 5:52:38 PM Logging Action
+INFO: guest has performed a successful search for: computer
+Apr 24, 2022 5:54:11 PM Logging Action
+INFO: guest has added the course: COMP 314  A FOUN COMP SCI 10:00:00-10:50:00 MWF.
+Apr 24, 2022 6:08:56 PM Logging Action
+INFO: A Guest has started to schedule
+Apr 24, 2022 6:09:02 PM Logging Action
+INFO: guest has performed a successful search for: computer
+Apr 24, 2022 6:10:08 PM Logging Action
+INFO: guest has added the course: ELEE 442  A COMPUTER II 11:00:00-11:50:00 MWF.
+Apr 24, 2022 6:10:23 PM Main main
+WARNING: guest added the invalid course: no
+Apr 24, 2022 6:11:01 PM Logging Action
+INFO: guest has added the course: COMP 314  A FOUN COMP SCI 10:00:00-10:50:00 MWF.
+Apr 24, 2022 6:11:07 PM Main main
+WARNING: guest added the invalid course: no
+Apr 24, 2022 6:11:15 PM Logging Action
+INFO: guest entered "view".
+Apr 24, 2022 6:11:20 PM Logging Action
+INFO: guest has quit the application.
+Apr 24, 2022 6:12:25 PM Logging Action
+INFO: A Guest has started to schedule
+Apr 24, 2022 6:12:30 PM Logging Action
+INFO: guest has added the course: COMP 141  A COMP PROGRAM I 13:00:00-13:50:00 MWF.
+Apr 24, 2022 6:12:42 PM Logging Action
+INFO: guest has quit the application.
+Apr 24, 2022 6:15:56 PM Logging Action
+INFO: A Guest has started to schedule
+Apr 24, 2022 6:16:01 PM Logging Action
+INFO: guest has performed a successful search for: computer
+Apr 24, 2022 6:16:41 PM Logging Action
+INFO: guest entered "view".
+Apr 24, 2022 6:17:44 PM Logging Action
+INFO: A Guest has started to schedule
+Apr 24, 2022 6:17:54 PM Logging Action
+INFO: guest has performed a successful search for: computer
+Apr 24, 2022 6:18:32 PM Logging Action
+INFO: guest has added the course: COMP 141  A COMP PROGRAM I 13:00:00-13:50:00 MWF.
+Apr 24, 2022 6:18:36 PM Main main
+WARNING: guest added the invalid course: done
+Apr 24, 2022 6:24:25 PM Logging Action
+INFO: A Guest has started to schedule
+Apr 24, 2022 6:24:30 PM Logging Action
+INFO: guest has performed a successful search for: computer
+Apr 24, 2022 6:24:45 PM Logging Action
+INFO: guest has added the course: COMP 141  A COMP PROGRAM I 13:00:00-13:50:00 MWF.
+Apr 24, 2022 6:26:15 PM Logging Action
+INFO: A Guest has started to schedule
+Apr 24, 2022 6:26:19 PM Main main
+WARNING: guest added the invalid course: comp 141  A
+Apr 24, 2022 6:51:49 PM Logging Action
+INFO: A Guest has started to schedule
+Apr 24, 2022 6:51:55 PM Logging Action
+INFO: guest has performed a successful search for: computer
+Apr 24, 2022 7:03:31 PM Logging Action
+INFO: A Guest has started to schedule
+Apr 24, 2022 7:03:36 PM Main main
+WARNING: guest has performed a search that yielded no results for: compuer
+Apr 24, 2022 7:03:41 PM Logging Action
+INFO: guest has performed a successful search for: computer
+Apr 24, 2022 7:06:14 PM Logging Action
+INFO: A Guest has started to schedule
+Apr 24, 2022 7:06:22 PM Logging Action
+INFO: guest has performed a successful search for: computer
+Apr 24, 2022 7:06:59 PM Logging Action
+INFO: A Guest has started to schedule
+Apr 24, 2022 7:07:05 PM Logging Action
+INFO: guest has performed a successful search for: computer
+Apr 24, 2022 7:09:39 PM Logging Action
+INFO: A Guest has started to schedule
+Apr 24, 2022 7:09:44 PM Logging Action
+INFO: guest has performed a successful search for: computer
+Apr 24, 2022 7:12:50 PM Logging Action
+INFO: A Guest has started to schedule
+Apr 24, 2022 7:12:53 PM Main main
+WARNING: Invalid Input: searach
+Apr 24, 2022 7:13:00 PM Logging Action
+INFO: guest has performed a successful search for: computer
+Apr 24, 2022 7:13:54 PM Logging Action
+INFO: guest has performed a successful search for: electrical
+Apr 24, 2022 7:14:09 PM Logging Action
+INFO: guest has performed a successful search for: a
+Apr 24, 2022 7:14:39 PM Logging Action
+INFO: A Guest has started to schedule
+Apr 24, 2022 7:14:49 PM Logging Action
+INFO: guest has performed a successful search for: e
+Apr 24, 2022 7:15:16 PM Logging Action
+INFO: A Guest has started to schedule
+Apr 24, 2022 7:15:23 PM Logging Action
+INFO: guest applied a filter to all of the courses by the time the course occurs.
+Apr 24, 2022 7:15:50 PM Logging Action
+INFO: guest applied a filter to all of the courses by the time the course occurs.
+Apr 24, 2022 7:16:01 PM Logging Action
+INFO: guest applied a filter to all of the courses by the time the course occurs.
+Apr 24, 2022 7:16:14 PM Logging Action
+INFO: guest applied a filter to all of the courses by the time the course occurs.
+Apr 24, 2022 7:16:23 PM Logging Action
+INFO: guest applied a filter to all of the courses by the time the course occurs.
+Apr 24, 2022 7:21:58 PM Logging Action
+INFO: A Guest has started to schedule
+Apr 24, 2022 7:22:04 PM Logging Action
+INFO: guest has performed a successful search for: computer
+Apr 24, 2022 7:29:09 PM Logging Action
+INFO: A Guest has started to schedule
+Apr 24, 2022 7:29:13 PM Main main
+WARNING: guest has performed a search that yielded no results for: cmputer
+Apr 24, 2022 7:29:17 PM Logging Action
+INFO: guest has performed a successful search for: computer
+Apr 24, 2022 7:29:35 PM Logging Action
+INFO: guest has added the course: COMP 314  A FOUN COMP SCI 10:00:00-10:50:00 MWF.
+Apr 24, 2022 7:29:52 PM Logging Action
+INFO: guest entered "view".
+Apr 24, 2022 7:29:57 PM Logging Action
+INFO: guest has quit the application.
