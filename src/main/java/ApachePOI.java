@@ -233,9 +233,13 @@ public class ApachePOI {
             searchInput = searchInput.toLowerCase();
 
             if(toCompare.contains(searchInput)){
+                String cellFive = "";
+                if(formatDate.formatCellValue(row.getCell(5)) != null){
+                    cellFive = formatDate.formatCellValue(row.getCell(5));
+                }
                 Course temp = new Course(row.getCell(0).getStringCellValue(), row.getCell(1).getStringCellValue(),
                         row.getCell(2).getStringCellValue(), formatDate.formatCellValue(row.getCell(3)),
-                        formatDate.formatCellValue(row.getCell(4)), formatDate.formatCellValue(row.getCell(5)),
+                        formatDate.formatCellValue(row.getCell(4)), cellFive,
                         formatDate.formatCellValue(row.getCell(6)), formatDate.formatCellValue(row.getCell(7)));
                 results.add(temp);
             }
