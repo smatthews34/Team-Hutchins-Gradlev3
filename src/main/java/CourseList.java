@@ -181,7 +181,7 @@ public class CourseList {
      */
     public static boolean checkConfliction(Course C, ArrayList<Course> S){
         //Null check to avoid errors with courses with no time or days value
-        if (C.meets == null || C.startTime == null || C.endTime == null) {
+        if (C.meets != null && C.startTime != null && C.endTime != null) {
             boolean check = false;
             //Splits up the string time into seperate int values to be accurately check for time conflict
             //startTime
