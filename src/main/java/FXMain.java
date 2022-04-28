@@ -17,6 +17,7 @@ import javafx.scene.input.KeyCode;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import javafx.scene.text.Font;
 import javafx.stage.Stage;
 
 import java.io.FileNotFoundException;
@@ -1458,41 +1459,99 @@ public class FXMain extends Application {
         calendarGroup = new Group();
         SplitPane calendarSplit = new SplitPane();
         calendarPane = new GridPane();
-        weeklyPane = new TableView<Course>();
+        weeklyPane = new TableView<ClassByTime>();
+        Label label = new Label("Schedule");
+        label.setFont(new Font("Arial", 20));
         //setProperties(weeklyPane, 550, 600, 20, 10, 10);
         //setProperties(calendarPane, 500, 550, 3, 10, 0);
 
-        TableColumn timeCol = new TableColumn<Course, String>("  ");
-        timeCol.setCellValueFactory(new PropertyValueFactory<Course,String>("startTime"));
+        TableColumn timeCol = new TableColumn<ClassByTime, String>("  ");
+        timeCol.setCellValueFactory(new PropertyValueFactory<Course,String>("time"));
         TableColumn monCol = new TableColumn<Course, String>("Monday");
-        monCol.setCellValueFactory(new PropertyValueFactory<Course,String>("courseCode"));
+        monCol.setMinWidth(75);
+        monCol.setCellValueFactory(new PropertyValueFactory<Course,String>("mon"));
         TableColumn tueCol = new TableColumn<Course, String>("Tuesday");
-        monCol.setCellValueFactory(new PropertyValueFactory<Course,String>("courseCode"));
+        tueCol.setMinWidth(75);
+        tueCol.setCellValueFactory(new PropertyValueFactory<Course,String>("tue"));
         TableColumn wedCol = new TableColumn<Course, String>("Wednesday");
-        monCol.setCellValueFactory(new PropertyValueFactory<Course,String>("courseCode"));
+        wedCol.setMinWidth(75);
+        wedCol.setCellValueFactory(new PropertyValueFactory<Course,String>("wed"));
         TableColumn thuCol = new TableColumn<Course, String>("Thursday");
-        monCol.setCellValueFactory(new PropertyValueFactory<Course,String>("courseCode"));
+        thuCol.setMinWidth(75);
+        thuCol.setCellValueFactory(new PropertyValueFactory<Course,String>("thu"));
         TableColumn friCol = new TableColumn<Course, String>("Friday");
-        monCol.setCellValueFactory(new PropertyValueFactory<Course,String>("courseCode"));
+        friCol.setMinWidth(75);
+        friCol.setCellValueFactory(new PropertyValueFactory<Course,String>("fri"));
         TableColumn satCol = new TableColumn<Course, String>("Saturday");
-        monCol.setCellValueFactory(new PropertyValueFactory<Course,String>("courseCode"));
+        satCol.setMinWidth(75);
+        satCol.setCellValueFactory(new PropertyValueFactory<Course,String>("sat"));
         TableColumn sunCol = new TableColumn<Course, String>("Sunday");
-        monCol.setCellValueFactory(new PropertyValueFactory<Course,String>("courseCode"));
+        sunCol.setMinWidth(75);
+        sunCol.setCellValueFactory(new PropertyValueFactory<Course,String>("sun"));
 
-        weeklyPane.getColumns().add(timeCol);
-        weeklyPane.getColumns().add(monCol);
-        weeklyPane.getColumns().add(tueCol);
-        weeklyPane.getColumns().add(wedCol);
-        weeklyPane.getColumns().add(thuCol);
-        weeklyPane.getColumns().add(friCol);
-        weeklyPane.getColumns().add(satCol);
-        weeklyPane.getColumns().add(sunCol);
+        weeklyPane.getColumns().addAll(timeCol,monCol,tueCol,wedCol,thuCol,friCol,satCol,sunCol);
 
-        HBox table = new HBox(weeklyPane);
-
+        //VBox table = new VBox(weeklyPane);
+        ArrayList<String> startTimesInOrder = new ArrayList<>();
+        startTimesInOrder.add("8:00:00");
+        startTimesInOrder.add("9:00:00");
+        startTimesInOrder.add("9:15:00");
+        startTimesInOrder.add("10:00:00");
+        startTimesInOrder.add("10:05:00");
+        startTimesInOrder.add("11:00:00");
+        startTimesInOrder.add("11:30:00");
+        startTimesInOrder.add("12:00:00");
+        startTimesInOrder.add("13:00:00");
+        startTimesInOrder.add("14:00:00");
+        startTimesInOrder.add("14:30:00");
+        startTimesInOrder.add("15:00:00");
+        startTimesInOrder.add("16:00:00");
+        startTimesInOrder.add("18:30:00");
+        startTimesInOrder.add("19:00:00");
+        //ArrayList<ClassByTime> data = new ArrayList<>();
+        for(int i = 0; i < startTimesInOrder.size(); i++) {
+            ArrayList<Course> temp = ConfirmSchedule.classesByTime(user.schedule, startTimesInOrder.get(i));
+            ArrayList<Course> mon = ConfirmSchedule.classesPerDay(temp, 2, false);
+            ArrayList<Course> tue = ConfirmSchedule.classesPerDay(temp, 3, false);
+            ArrayList<Course> wed = ConfirmSchedule.classesPerDay(temp, 4, false);
+            ArrayList<Course> thu = ConfirmSchedule.classesPerDay(temp, 5, false);
+            ArrayList<Course> fri = ConfirmSchedule.classesPerDay(temp, 6, false);
+            while (!mon.isEmpty() || !tue.isEmpty() || !wed.isEmpty() || !thu.isEmpty() || !fri.isEmpty()) {
+                String monString = "";
+                String tueString = "";
+                String wedString = "";
+                String thuString = "";
+                String friString = "";
+                if(!mon.isEmpty()){
+                    monString = mon.get(0).getCourseCode();
+                    mon.remove(0);
+                }
+                if(!tue.isEmpty()){
+                    tueString = tue.get(0).getCourseCode();
+                    tue.remove(0);
+                }
+                if(!wed.isEmpty()){
+                    wedString = wed.get(0).getCourseCode();
+                    wed.remove(0);
+                }
+                if(!thu.isEmpty()){
+                    thuString = thu.get(0).getCourseCode();
+                    thu.remove(0);
+                }
+                if(!fri.isEmpty()){
+                    friString = fri.get(0).getCourseCode();
+                    fri.remove(0);
+                }
+                ClassByTime classes = new ClassByTime(startTimesInOrder.get(i),monString,tueString,wedString,
+                        thuString,friString, "", "");
+                weeklyPane.getItems().add(classes);
+                //data.add(classes);
+            }
+        }
+        //ObservableList<ClassByTime> toPrint = FXCollections.observableList(data);
         setProperties(calendarPane, 450, 450, 15, 10, 15);
 
-        calendarGroup.getChildren().add(table);
+        calendarGroup.getChildren().add(weeklyPane);
         calendarScene = new Scene(calendarGroup, 645, 400);
         calendarScene.getStylesheets().add("File:src/projStyles.css");
         calendarScene.setFill(rgb(245, 238, 238));
