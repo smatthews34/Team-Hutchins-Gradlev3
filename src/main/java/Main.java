@@ -525,9 +525,9 @@ public class Main {
                     System.out.println("To search by department, enter the code in all capital letters. ex: COMP");
                     System.out.println("To search by building, enter the building code in all capital letters. ex: STEM");
                     System.out.println("Or enter 'done' if you are done filtering the course.");
-                    filter = filterSCNR.nextLine();
+                    filter = filterSCNR.next();
                     if(filter.equals("done")||filter.equals("Done")){
-                        //break;
+                        break;
                     }else if (filter.equals("days")) {
                         Search.filterTxtDays();
                         lg.Action(user.username + " applied a filter to all of the courses by day(s) the course meets");
@@ -551,6 +551,7 @@ public class Main {
                     }
 
                     System.out.println("Would you like to add from the filtered results (Yes/No)");
+                    filter = filterSCNR.next();
                     if(filter.equalsIgnoreCase("yes")){
                         String addO = "";
                         while(!addO.equals("done")) {
