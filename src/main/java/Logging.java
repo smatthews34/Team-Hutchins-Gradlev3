@@ -1,5 +1,6 @@
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.logging.FileHandler;
 import java.util.logging.Logger;
@@ -31,13 +32,20 @@ public class Logging {
         this.logger.warning(s);
     }
 
-    public static void recreatScheduleFromLog(String user){
+    public static void recreateScheduleFromLog(String user, ArrayList<Course> schedule){
         try {
             File file = new File(user + ".txt");
             Scanner sc = new Scanner(file);
 
             while (sc.hasNextLine()) {
-                System.out.println(sc.nextLine());
+                String temp = sc.nextLine();
+                if(temp.contains("Successfuly removed the course:")){
+                    System.out.println("R");
+                }else if(temp.contains("has added the course:")){
+                    System.out.println("A");
+                }else{
+                    System.out.println("None");
+                }
             }
         }catch (Exception e){
             System.out.println("Sorry");
@@ -45,9 +53,10 @@ public class Logging {
     }
 
     public static void main(String[] args) throws IOException {
-        System.out.println("Welcom to Logging Testing!");
+        System.out.println("Welcome to Logging Testing!");
         //Logging lg1 = new Logging("tom");
-        recreatScheduleFromLog("guest");
+        ArrayList<Course> c = new ArrayList<>();
+        recreateScheduleFromLog("guest", c);
         //lg1.logger.setLevel(Level.ALL);
         //lg1.Action("Hi");
         //lg1.logger.info("Hello testing logger.");

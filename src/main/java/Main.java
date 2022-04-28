@@ -385,13 +385,14 @@ public class Main {
             else if(command.equals("lucky")){
                 Scanner luckyScn = new Scanner(System.in);
                 String lucky = "";
-                while(!lucky.equals("N")||!lucky.equals("n")) {
+                while(!lucky.equals("N")&&!lucky.equals("n")) {
                     System.out.println("Are you feeling lucky? (Y/N)");
                     lucky = luckyScn.next();
                     if (lucky.equals("Y") || lucky.equals("y")) {
                         cl.FeelingLucky(user.schedule);
                         lg.Action(user.username + " was feeling lucky and added the course: " + user.schedule.get(user.schedule.size()-1) + " to their schedule.");
                         System.out.println("Would you like to try again?(Y/N)");
+                        lucky = luckyScn.next();
                         if(lucky.equals("N") || lucky.equals("n")){
                             System.out.println("Guess you're not feeling lucky anymore...");
                             lg.Action(user.username + " was not feeling lucky anymore.");
