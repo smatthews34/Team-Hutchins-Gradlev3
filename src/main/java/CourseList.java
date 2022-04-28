@@ -166,36 +166,38 @@ public class CourseList {
     }*/
     //REMOVE IF BROKEN
     public static boolean checkConfliction(Course C, ArrayList<Course> S){
-        boolean check = false;
-        //startTime
-        String StartNums[] = C.startTime.split(":");
-        int S_hour = Integer.parseInt(StartNums[0]);
-        int S_minute = Integer.parseInt(StartNums[1]);
-        //endTime
-        String EndNums[] = C.endTime.split(":");
-        int E_hour = Integer.parseInt(EndNums[0]);
-        int E_minute = Integer.parseInt(EndNums[1]);
-
-        for(int i = 0; i < S.size(); i++){
+        if (C.meets == null || C.startTime == null || C.endTime == null) {
+            boolean check = false;
             //startTime
-            String snums[] = S.get(i).startTime.split(":");
-            int h1 = Integer.parseInt(snums[0]);
-            int m1 = Integer.parseInt(snums[1]);
+            String StartNums[] = C.startTime.split(":");
+            int S_hour = Integer.parseInt(StartNums[0]);
+            int S_minute = Integer.parseInt(StartNums[1]);
             //endTime
-            String endnums[] = S.get(i).endTime.split(":");
-            int h2 = Integer.parseInt(endnums[0]);
-            int m2 = Integer.parseInt(endnums[1]);
+            String EndNums[] = C.endTime.split(":");
+            int E_hour = Integer.parseInt(EndNums[0]);
+            int E_minute = Integer.parseInt(EndNums[1]);
 
-            if(S.get(i).startTime != null && C.startTime != null && S.get(i).startTime.equals(C.startTime) && (S.get(i).meets.equals(C.meets)||(S.get(i).meets.contains(C.meets)||C.meets.contains(S.get(i).meets)))) {
-                check = true;
+            for (int i = 0; i < S.size(); i++) {
+                //startTime
+                String snums[] = S.get(i).startTime.split(":");
+                int h1 = Integer.parseInt(snums[0]);
+                int m1 = Integer.parseInt(snums[1]);
+                //endTime
+                String endnums[] = S.get(i).endTime.split(":");
+                int h2 = Integer.parseInt(endnums[0]);
+                int m2 = Integer.parseInt(endnums[1]);
+
+                if (S.get(i).startTime != null && C.startTime != null && S.get(i).startTime.equals(C.startTime) && (S.get(i).meets.equals(C.meets) || (S.get(i).meets.contains(C.meets) || C.meets.contains(S.get(i).meets)))) {
+                    check = true;
+                } else if (S.get(i).startTime != null && C.startTime != null && (h2 == S_hour && m2 >= S_minute) && (S.get(i).meets.equals(C.meets) || (S.get(i).meets.contains(C.meets) || C.meets.contains(S.get(i).meets)))) {
+                    check = true;
+                } else if (S.get(i).startTime != null && C.startTime != null && (h1 == E_hour && E_minute >= m1) && (S.get(i).meets.equals(C.meets) || (S.get(i).meets.contains(C.meets) || C.meets.contains(S.get(i).meets)))) {
+                    check = true;
+                }
             }
-            else if(S.get(i).startTime != null && C.startTime != null && (h2 == S_hour && m2 >= S_minute) && (S.get(i).meets.equals(C.meets)||(S.get(i).meets.contains(C.meets)||C.meets.contains(S.get(i).meets)))){
-                check = true;
-            }else if(S.get(i).startTime != null && C.startTime != null && (h1 == E_hour && E_minute >= m1) && (S.get(i).meets.equals(C.meets)||(S.get(i).meets.contains(C.meets)||C.meets.contains(S.get(i).meets)))){
-                check = true;
-            }
+            return check;
         }
-        return check;
+        return false;
     }
     //REMOVE IF BROKEN
     /**
