@@ -1445,7 +1445,8 @@ public class FXMain extends Application {
 
 
 
-    TableView calendarPane;
+    TableView weeklyPane;
+    GridPane calendarPane;
     Group calendarGroup;
     Scene calendarScene;
     Stage calendarStage;
@@ -1455,7 +1456,10 @@ public class FXMain extends Application {
     public void launchCalendar(){
         calendarStage = new Stage();
         calendarGroup = new Group();
-        calendarPane = new TableView<Course>();
+        SplitPane calendarSplit = new SplitPane();
+        calendarPane = new GridPane();
+        weeklyPane = new TableView<Course>();
+        //setProperties(weeklyPane, 550, 600, 20, 10, 10);
         //setProperties(calendarPane, 500, 550, 3, 10, 0);
 
         TableColumn timeCol = new TableColumn<Course, String>("  ");
@@ -1475,16 +1479,18 @@ public class FXMain extends Application {
         TableColumn sunCol = new TableColumn<Course, String>("Sunday");
         monCol.setCellValueFactory(new PropertyValueFactory<Course,String>("courseCode"));
 
-        calendarPane.getColumns().add(timeCol);
-        calendarPane.getColumns().add(monCol);
-        calendarPane.getColumns().add(tueCol);
-        calendarPane.getColumns().add(wedCol);
-        calendarPane.getColumns().add(thuCol);
-        calendarPane.getColumns().add(friCol);
-        calendarPane.getColumns().add(satCol);
-        calendarPane.getColumns().add(sunCol);
+        weeklyPane.getColumns().add(timeCol);
+        weeklyPane.getColumns().add(monCol);
+        weeklyPane.getColumns().add(tueCol);
+        weeklyPane.getColumns().add(wedCol);
+        weeklyPane.getColumns().add(thuCol);
+        weeklyPane.getColumns().add(friCol);
+        weeklyPane.getColumns().add(satCol);
+        weeklyPane.getColumns().add(sunCol);
 
-        VBox table = new VBox(calendarPane);
+        HBox table = new HBox(weeklyPane);
+
+        setProperties(calendarPane, 450, 450, 15, 10, 15);
 
         calendarGroup.getChildren().add(table);
         calendarScene = new Scene(calendarGroup, 645, 400);

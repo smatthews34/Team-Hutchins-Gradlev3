@@ -58,7 +58,7 @@ public class ApachePOI {
            //schedules.close();
 
            FileOutputStream outputStream = new FileOutputStream(fileName);
-           System.out.println("final test");
+           //System.out.println("final test");
            schedules.write(outputStream);
            schedules.close();
            outputStream.close();
@@ -125,28 +125,30 @@ public class ApachePOI {
         try{
             FileInputStream userFile = new FileInputStream("UserSchedules.xlsx");
             XSSFWorkbook schedules = new XSSFWorkbook(userFile);
-            XSSFSheet userSheet = schedules.getSheet(username);
-            ArrayList<Row> allRows = new ArrayList<>();
-            //skip first row
-            //boolean skipHeader = true;
-            for(Row row : userSheet){
+            if(schedules.getSheet(username) != null) {
+                XSSFSheet userSheet = schedules.getSheet(username);
+                ArrayList<Row> allRows = new ArrayList<>();
+                //skip first row
+                //boolean skipHeader = true;
+                for (Row row : userSheet) {
 //                if(skipHeader){
 //                    skipHeader = false;
 //                    continue;
 //                }
-                allRows.add(row);
-            }
-
-            for(int i = 0; i < allRows.size(); i++) {
-                ArrayList<String> cells = new ArrayList<>();
-                for (Cell cell : allRows.get(i)) {
-                    String cellWSpace = formatDate.formatCellValue(cell);
-                    cells.add(cellWSpace);
+                    allRows.add(row);
                 }
-                //create course to be added
-                Course temp = new Course(cells.get(0),cells.get(1), cells.get(2), cells.get(3), cells.get(4), cells.get(5),
-                        cells.get(6),cells.get(7));
-                completeList.add(temp);
+
+                for (int i = 0; i < allRows.size(); i++) {
+                    ArrayList<String> cells = new ArrayList<>();
+                    for (Cell cell : allRows.get(i)) {
+                        String cellWSpace = formatDate.formatCellValue(cell);
+                        cells.add(cellWSpace);
+                    }
+                    //create course to be added
+                    Course temp = new Course(cells.get(0), cells.get(1), cells.get(2), cells.get(3), cells.get(4), cells.get(5),
+                            cells.get(6), cells.get(7));
+                    completeList.add(temp);
+                }
             }
         } catch (FileNotFoundException e) {
             System.out.println("Did not add this file to the directory (fool)");
@@ -250,6 +252,8 @@ public class ApachePOI {
         writeSchedule(userName, userCourse);
         System.out.println("Complete");
 
+        ArrayList<Course> blah = readSchedule("blah");
+        System.out.println(blah);
         ArrayList<Course> completed = readSchedule(userName);
         System.out.println(completed);
 

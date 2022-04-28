@@ -1,0 +1,2 @@
+Apr 27, 2022 5:55:48 PM Logging Action
+INFO: A Guest has started to schedule
