@@ -32,6 +32,13 @@ public class Logging {
         this.logger.warning(s);
     }
 
+    /**
+     * recreateScheduleFromLog()
+     * @param user
+     * @param schedule
+     * Would've went through the log of a user and reconstruct the schedule they were making.
+     * Sprint 3 activity.
+     */
     public static void recreateScheduleFromLog(String user, ArrayList<Course> schedule){
         try {
             File file = new File(user + ".txt");
@@ -41,10 +48,11 @@ public class Logging {
                 //Skips the time stamp part of the log.
                 sc.nextLine();
                 String temp = sc.nextLine();
-                if(temp.contains("Successfuly removed the course:")){
+                if(temp.contains("Successfuly removed the course:")){ //look for the remove statements
                     System.out.println("R");
-                }else if(temp.contains("has added the course:")){
-                    System.out.println("A");
+                }else if(temp.contains("has added the course:")){ //looks for add statements
+                    String t = temp;
+                    System.out.println("A " + temp);
                 }else{
                     System.out.println("None");
                 }
