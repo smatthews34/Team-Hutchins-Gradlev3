@@ -79,15 +79,22 @@ public class CourseList {
         updateHistory("remove", course);
     }
 
-    ///
+    /**
+     * conflictResolution
+     * @param s the ArrayList<Course> that represents the user's current schedule
+     * @return the list of courses that conflict with another course
+     */
     public ArrayList<Course> conflictResolution(ArrayList<Course> s){
-        ArrayList<Course> conflictList = new ArrayList<Course>();
+        ArrayList<Course> conflictList = new ArrayList<Course>(); //course list that the conflicting courses
+        //Cycles through the user's schedule to check if there are any conflicts within the course
         for (int p = 0; p < s.size(); p++){
             ArrayList<Course> temp = new ArrayList<Course>();
             for (int i = 0; i <s.size(); i++){
                 temp.add(s.get(i));
             }
+            //removes the current course that is being checked for confliction to avoid duplication of courses on the list
             temp.remove(p);
+            //goes through and adds any courses that conflict with the current course being checked
             if(checkConfliction(s.get(p), temp)){
                 conflictList.add(s.get(p));
             }
@@ -165,9 +172,18 @@ public class CourseList {
         return check;
     }*/
     //REMOVE IF BROKEN
+
+    /**
+     * checkConfliction
+     * @param C Course to be check with the user's current schedule
+     * @param S ArrayList<Course> of the user's current schedule to be checked for confliction with new course.
+     * @return
+     */
     public static boolean checkConfliction(Course C, ArrayList<Course> S){
+        //Null check to avoid errors with courses with no time or days value
         if (C.meets == null || C.startTime == null || C.endTime == null) {
             boolean check = false;
+            //Splits up the string time into seperate int values to be accurately check for time conflict
             //startTime
             String StartNums[] = C.startTime.split(":");
             int S_hour = Integer.parseInt(StartNums[0]);
@@ -203,7 +219,7 @@ public class CourseList {
     /**
      *
      * @param code of a course to be added
-     * @return the course the user was trying to acces
+     * @return the course the user was trying to access
      * @return null if class does not exist.
      */
     public static Course getCourse(String code){
@@ -271,41 +287,49 @@ public class CourseList {
      * @param schedule the current user's schedule
      */
     public static void autoFill(String classPosition, String semester, ArrayList<Course> schedule){
+        /*SOME COURSES WERE NOT IN THE EXCEL DOCUMENT SO WE USED SUBSTITUTES FOR CERTAIN COURSES*/
+        //default courses for freshman in the fall semester
         if(classPosition.equals("Fresh") && semester.equals("F")){
             schedule.add(getCourse("HUMA 102  A"));
             schedule.add(getCourse("CHEM 102  O    L"));
             schedule.add(getCourse("CHEM 102  B"));
-        }else if(classPosition.equals("Soph") && semester.equals("F")){
+        }else if(classPosition.equals("Soph") && semester.equals("F")){ //default courses for sophomores in the fall semester
             schedule.add(getCourse("HIST 120  A"));
             schedule.add(getCourse("HUMA 202  A"));
-        }else if(classPosition.equals("Junior") && semester.equals("F")){
+        }else if(classPosition.equals("Junior") && semester.equals("F")){ //default courses for junior in the fall semester
             schedule.add(getCourse("HUMA 301  A"));
-        }else if(classPosition.equals("Senior") && semester.equals("F")){
+        }else if(classPosition.equals("Senior") && semester.equals("F")){ //default courses for senior in the fall semester
             schedule.add(getCourse("HUMA 302  B")); //would be HUMA 303 but the course list given is missing HUMA 303
-        }else if(classPosition.equals("Fresh") && semester.equals("S")){
+        }else if(classPosition.equals("Fresh") && semester.equals("S")){ //default courses for freshman in the spring semester
             schedule.add(getCourse("WRIT 101  A"));
             schedule.add(getCourse("PHYE 102  C")); //Should be 101 but not on list
             schedule.add(getCourse("BIOL 102  O    L"));
             schedule.add(getCourse("BIOL 102  B"));
-        }else if(classPosition.equals("Soph") && semester.equals("S")){
+        }else if(classPosition.equals("Soph") && semester.equals("S")){ //default courses for sophomores in the spring semester
             schedule.add(getCourse("HUMA 202  A"));
-        }else if(classPosition.equals("Junior") && semester.equals("S")){
+        }else if(classPosition.equals("Junior") && semester.equals("S")){ //default courses for juniors in the spring semester
             schedule.add(getCourse("HUMA 301  A"));
-        }else if(classPosition.equals("Senior") && semester.equals("S")){
+        }else if(classPosition.equals("Senior") && semester.equals("S")){ //default courses for seniors in the spring semester
             schedule.add(getCourse("HUMA 302  B")); //would be HUMA 303 but the course list given is missing HUMA 303
         }else {
+            //Should never be reached but here just in case
             System.out.println("Super Senior Has No Designated HUMA or Base Courses, Seek an Advisors Assistance to Figure What HUMAs and Courses you Might be Missing.");
         }
     }
 
+    /**
+     * clearList()
+     * clears all of the courses on the user's current schedule
+     */
     public static void clearList(){
         courseList.clear();
     }
     //remove if broken.
 
     /**
-     *
+     * FeelingLucky()
      * @param schedule the user's current schedule
+     * Will put a course at random onto the user's current schedule, the course will not conflict with any courses on schedule.
      */
     public void FeelingLucky(ArrayList<Course> schedule){
         Boolean conflict = true;
@@ -313,10 +337,12 @@ public class CourseList {
         Random rand = new Random();
         Course c;
         int choice = 0;
+        //The while loop will loop until a non-conflicting course is selected.
         while(conflict) {
             choice = rand.nextInt(options.size());
             c = options.get(choice);
             conflict = checkConfliction(c,schedule);
+            //if the course that was randomly selected does not conflict it will be put into the user's current schedule.
             if(conflict == false && (!c.roomNum.equals(null)&&!c.endTime.equals(null)&&!c.startTime.equals(null)&&!c.courseCode.equals(null)&&!c.meets.equals(null)&&!c.building.equals(null)&&!c.longTitle.equals(null)&&!c.shortTitle.equals(null))) {
                 schedule.add(c);
                 updateHistory("add", c);
