@@ -38,6 +38,8 @@ public class Logging {
             Scanner sc = new Scanner(file);
 
             while (sc.hasNextLine()) {
+                //Skips the time stamp part of the log.
+                sc.nextLine();
                 String temp = sc.nextLine();
                 if(temp.contains("Successfuly removed the course:")){
                     System.out.println("R");

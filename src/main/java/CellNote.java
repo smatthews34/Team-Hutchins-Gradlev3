@@ -7,9 +7,11 @@ public class CellNote {
     public static void sendNotification(String provider, String phone, ArrayList<Course> s){
         String schedule = "";
         String to = "";
+        //Builds the schedule to text message the user their current schedule
         for (int i = 0; i < s.size(); i++){
             schedule += s.get(i).courseCode + " " + s.get(i).shortTitle + " " + s.get(i).meets + " " + s.get(i).startTime + "-" + s.get(i).endTime + "\n";
         }
+        //all the cell providers that we have on file to be able to send the message
         switch (provider){
             case "AT&T":
                 to = phone + "@txt.att.net";
@@ -55,6 +57,7 @@ public class CellNote {
         System.out.println("Message: " + schedule);
 
         try{
+            //the process to take the input from the user and send it to the python script to run the logic of sending the text message.
             ProcessBuilder b = new ProcessBuilder("python", System.getProperty("user.dir") + "\\PythonScripts\\alert.py", schedule, "Schedule", to);
             Process p = b.start();
             BufferedReader reader = new BufferedReader(new InputStreamReader(p.getInputStream()));
