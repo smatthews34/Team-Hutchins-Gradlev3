@@ -1,0 +1,14 @@
+Apr 28, 2022 12:54:49 PM Logging Action
+INFO: A Guest has started to schedule
+Apr 28, 2022 12:55:02 PM Logging logConflict
+WARNING: guest has attempted to add the course: EDUC 437  A STU TCH-SEC MUS 16:00:00-17:30:00 , that is a duplicate of a course on their current schedule.
+Apr 28, 2022 12:55:14 PM Logging Action
+INFO: guest has undone their last action
+Apr 28, 2022 12:55:22 PM Logging logConflict
+WARNING: guest has attempted to add the course: EDUC 437  A STU TCH-SEC MUS 16:00:00-17:30:00 , that is a duplicate of a course on their current schedule.
+Apr 28, 2022 12:55:27 PM Logging Action
+INFO: guest has undone their last action
+Apr 28, 2022 12:55:35 PM Logging logConflict
+WARNING: guest has attempted to add the course: EDUC 437  A STU TCH-SEC MUS 16:00:00-17:30:00 , that is a duplicate of a course on their current schedule.
+Apr 28, 2022 12:58:12 PM Logging Action
+INFO: A Guest has started to schedule

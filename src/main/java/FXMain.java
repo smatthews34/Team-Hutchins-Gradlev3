@@ -614,6 +614,7 @@ public class FXMain extends Application {
             } else {
                 user = new User(potentialUser.username, potentialUser.password, potentialUser.name);
                 user.setEmail(potentialUser.email);
+                user.schedule = ApachePOI.readSchedule(user.username);
                 cl = new CourseList();
                 try {
                     lg = new Logging(user.username);
@@ -891,6 +892,11 @@ public class FXMain extends Application {
         alertPane.add(alertTitleLbl, 0, 0, 2, 1);
         alertPane.add(alertMsgLbl, 0, 1, 2, 1);
        if (user.username != "guest") {
+           try {
+               ApachePOI.writeSchedule(user.username,user.schedule);
+           } catch (IOException e) {
+               e.printStackTrace();
+           }
             CheckBox cb = new CheckBox("Send to my email");
             cb.setOnAction(event-> {
                 try {
@@ -1163,16 +1169,25 @@ public class FXMain extends Application {
         scheduleLbl.getStyleClass().clear();
         scheduleLbl.getStyleClass().add("subtitle");
 
-        Label emptyLbl = new Label("(There's nothing here!\nAdd some courses from Search.)");
-        emptyLbl.setOpacity(.6);
-
         allCoursePane = new GridPane();
         setProperties(allCoursePane, 400, 40, 0, 0, 0);
 
-        schedulePane.add(btnPane, 0, 1);
+//        //Label emptyLbl = new Label("");
+//
+        //user.schedule = ApachePOI.readSchedule(user.username);
+        if(user.schedule.isEmpty()) {
+            Label emptyLbl = new Label("(There's nothing here!\nAdd some courses from Search.)");
+            emptyLbl.setOpacity(.6);
+            schedulePane.add(emptyLbl, 0, 3);
+        }
+        else{
+            updateScheduleDisplay();
+        }
+
+        //schedulePane.add(btnPane, 0, 1);
         schedulePane.add(scheduleLbl, 0, 2);
         //schedulePane.add(allCoursePane, 0, 2);
-        schedulePane.add(emptyLbl, 0, 3);
+        //schedulePane.add(emptyLbl, 0, 3);
 
         setProperties(schedulePane, 450, 450, 15, 10, 15);
 
