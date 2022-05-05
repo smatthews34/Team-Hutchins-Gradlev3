@@ -180,10 +180,12 @@ public class ApachePOI {
                 String cellWSpace = formatDate.formatCellValue(cell);
                 cells.add(cellWSpace);
             }
-            //create course to be added
-            Course temp = new Course(cells.get(0), cells.get(1),cells.get(2), cells.get(3), cells.get(4),
-                    cells.get(5), cells.get(6), cells.get(7));
-            completeList.add(temp);
+            if(!cells.get(3).equalsIgnoreCase("NULL")) {
+                //create course to be added
+                Course temp = new Course(cells.get(0), cells.get(1), cells.get(2), cells.get(3), cells.get(4),
+                        cells.get(5), cells.get(6), cells.get(7));
+                completeList.add(temp);
+            }
         }
         return completeList;
     }
@@ -199,11 +201,13 @@ public class ApachePOI {
             String toCompare = formatDate.formatCellValue(cell);
 
             if(courseCode.equals(toCompare)){
-                Course temp = new Course(row.getCell(0).getStringCellValue(), row.getCell(1).getStringCellValue(),
-                        row.getCell(2).getStringCellValue(), formatDate.formatCellValue(row.getCell(3)),
-                        formatDate.formatCellValue(row.getCell(4)), formatDate.formatCellValue(row.getCell(5)),
-                        formatDate.formatCellValue(row.getCell(6)), formatDate.formatCellValue(row.getCell(7)));
-                return temp;
+                if(!formatDate.formatCellValue(row.getCell(3)).equalsIgnoreCase("NULL")) {
+                    Course temp = new Course(row.getCell(0).getStringCellValue(), row.getCell(1).getStringCellValue(),
+                            row.getCell(2).getStringCellValue(), formatDate.formatCellValue(row.getCell(3)),
+                            formatDate.formatCellValue(row.getCell(4)), formatDate.formatCellValue(row.getCell(5)),
+                            formatDate.formatCellValue(row.getCell(6)), formatDate.formatCellValue(row.getCell(7)));
+                    return temp;
+                }
             }
         }
         return null;
@@ -232,7 +236,7 @@ public class ApachePOI {
             toCompare = toCompare.toLowerCase();
             searchInput = searchInput.toLowerCase();
 
-            if(toCompare.contains(searchInput)){
+            if(toCompare.contains(searchInput) && !formatDate.formatCellValue(row.getCell(3)).contains("NULL")){
                 String cellFive = "";
                 if(formatDate.formatCellValue(row.getCell(5)) != null){
                     cellFive = formatDate.formatCellValue(row.getCell(5));
